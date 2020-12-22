@@ -1,0 +1,58 @@
+#N canvas -8 -8 1904 986 10;
+#X msg 402 836 close;
+#X msg 332 803 devices;
+#X msg 336 836 open 5;
+#X obj 648 870 comport 5 9600;
+#X msg 648 828 2;
+#X obj 975 711 dbtorms;
+#X floatatom 975 736 9 0 0 0 - - -, f 9;
+#X obj 1082 702 hsl 128 15 0 0.5 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 5100 1;
+#X obj 1034 790 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 974 686 env~ 256;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array happy123 70495 float 0 black black;
+#X coords 0 1 70494 -1 200 140 1;
+#X restore 1370 229 graph;
+#X obj 1590 323 soundfiler;
+#X msg 1590 248 Sounds/happy1.wav;
+#X obj 1590 273 symbol;
+#X msg 1590 298 read -resize \$1 happy1;
+#X obj 982 583 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1060 666 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 1082 725 5 0 0 0 - - -, f 5;
+#X obj 977 767 moses 0.2;
+#X obj 469 555 hradio 15 0 0 3 empty empty empty 0 -8 0 10 -262144
+-1 -1 1;
+#X obj 469 578 + 1;
+#X floatatom 469 603 5 0 0 0 - - -, f 5;
+#X msg 469 627 set \$1;
+#X msg 705 829 0;
+#X obj 975 622 tabplay~ happy123;
+#X connect 0 0 3 0;
+#X connect 1 0 3 0;
+#X connect 2 0 3 0;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 6 0 18 0;
+#X connect 7 0 17 0;
+#X connect 7 0 18 1;
+#X connect 8 0 4 0;
+#X connect 9 0 5 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 11 0;
+#X connect 15 0 24 0;
+#X connect 16 0 24 0;
+#X connect 18 0 23 0;
+#X connect 18 1 8 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 22 0 4 0;
+#X connect 23 0 3 0;
+#X connect 24 0 9 0;
+#X connect 24 1 16 0;
