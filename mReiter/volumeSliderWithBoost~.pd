@@ -1,0 +1,129 @@
+#N canvas 0 0 1362 685 10;
+#X obj 105 114 vsl 18 110 0.01 1 1 0 gainSliderWithBoost empty Volume
+-3 -7 1 8 -1 -4034 -33289 0 1;
+#X floatatom -417 441 5 0 0 0 - - -;
+#X msg -417 511 \$1 \$2;
+#X msg -417 374 0.2;
+#X floatatom -378 441 5 0 0 0 - - -;
+#X obj -417 466 bondo 2;
+#X obj -417 486 pack f f;
+#X obj -417 321 loadbang;
+#X msg -378 377 50;
+#X floatatom -332 405 5 0 0 0 - - -;
+#X obj 142 423 osc~ 440;
+#X obj 140 493 dac~;
+#X obj 141 456 *~;
+#X obj -417 534 line~;
+#X obj 210 227 spigot;
+#X obj 274 224 spigot;
+#X obj 243 39 tgl 15 0 empty muteSliderWithBoost empty 17 7 0 10 -262144
+-1 -1 1 1;
+#X obj 301 204 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+-1;
+#X obj 301 181 - 1;
+#X floatatom 210 254 5 0 0 0 - - -;
+#X obj 274 156 t f f;
+#X obj 220 97 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj -250 199 spigot;
+#X floatatom -195 120 5 0 0 0 - - -;
+#X obj -195 142 == 0;
+#X floatatom -195 165 5 0 0 0 - - -;
+#X obj 105 231 tgl 18 0 muteSliderWithBoost empty On/Off -1 23 1 8
+-66577 -4034 -13381 1 1;
+#X obj -195 99 tgl 15 0 empty muteSliderWithBoost empty 17 7 0 10 -262144
+-1 -1 1 1;
+#X text 262 28 Eingänge mit toggle öffnen/schließen \, also umschalten
+zwischen durchgang mit volum und einem "0" Durchgang = mute;
+#X floatatom -250 120 5 0 0 0 - - -;
+#X obj -250 143 change;
+#X msg -250 164 0;
+#X obj -129 216 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text -416 18 r gain kommt vom vslider der Lautstärke... change
+"bangt" nur wenn der slider bewegt wird und spigot lässt nur dann
+einen band durch wenn die mute Taste eingeschaltet ist ==> wird der
+slider im mute modus bewegt \, wird wieder auf laut geschalten!;
+#X text -526 565 diese Funktion "rampt"die Werte die vom Gain Regler/Volume
+kommen langsam auf/ab um kein Knistern zu erzeugen!;
+#X floatatom 142 399 5 0 0 0 - - -;
+#X obj -77 550 outlet~;
+#X text 107 513 Kontroll Oscilator;
+#X text 157 444 hierhin zum testen: line~ Ausgang;
+#X obj 130 128 vradio 15 1 0 6 boostSliderWithBoost empty boost -3
+98 0 9 -4034 -66577 -66577 3;
+#X floatatom 679 368 5 0 0 0 - - -;
+#X obj 679 294 * -1;
+#X obj 679 148 vradio 19 1 0 6 empty boostSliderWithBoost empty 0 -8
+0 10 -262144 -1 -1 3;
+#X obj 679 344 / 3;
+#X obj 679 317 + 6;
+#X obj 611 412 *;
+#X obj 600 384 bondo 2;
+#X floatatom 611 434 5 0 0 0 - - -;
+#X floatatom 600 360 5 0 0 0 - - -;
+#X msg 130 42 3;
+#X obj 130 17 loadbang;
+#X obj 55 17 loadbang;
+#X msg 55 42 1;
+#X text 498 463 slider mathematisch umgedreht von 0.33 bis 2 multipliziert
+mit dem volume slider!;
+#X obj 679 269 t f b;
+#X obj -250 78 r gainSliderWithBoost;
+#X obj 526 343 r gainSliderWithBoost;
+#X obj 210 275 s volumeWithBoost;
+#X obj -538 424 r volumeWithBoost;
+#X connect 1 0 5 0;
+#X connect 2 0 13 0;
+#X connect 3 0 1 0;
+#X connect 4 0 5 1;
+#X connect 5 0 6 0;
+#X connect 5 1 6 1;
+#X connect 6 0 2 0;
+#X connect 7 0 3 0;
+#X connect 7 0 8 0;
+#X connect 8 0 4 0;
+#X connect 9 0 4 0;
+#X connect 10 0 12 0;
+#X connect 13 0 36 0;
+#X connect 14 0 19 0;
+#X connect 15 0 19 0;
+#X connect 16 0 14 1;
+#X connect 16 0 20 0;
+#X connect 16 0 21 0;
+#X connect 17 0 15 1;
+#X connect 18 0 17 0;
+#X connect 19 0 57 0;
+#X connect 20 0 15 0;
+#X connect 20 1 18 0;
+#X connect 21 0 0 0;
+#X connect 22 0 32 0;
+#X connect 23 0 24 0;
+#X connect 24 0 25 0;
+#X connect 25 0 22 1;
+#X connect 27 0 23 0;
+#X connect 29 0 30 0;
+#X connect 30 0 31 0;
+#X connect 31 0 22 0;
+#X connect 32 0 26 0;
+#X connect 35 0 10 0;
+#X connect 40 0 46 1;
+#X connect 41 0 44 0;
+#X connect 42 0 54 0;
+#X connect 43 0 40 0;
+#X connect 44 0 43 0;
+#X connect 45 0 47 0;
+#X connect 46 0 45 0;
+#X connect 46 1 45 1;
+#X connect 47 0 14 0;
+#X connect 48 0 46 0;
+#X connect 49 0 39 0;
+#X connect 50 0 49 0;
+#X connect 51 0 52 0;
+#X connect 52 0 26 0;
+#X connect 54 0 41 0;
+#X connect 54 1 21 0;
+#X connect 55 0 29 0;
+#X connect 56 0 48 0;
+#X connect 58 0 1 0;
+#X coords 0 -1 1 1 60 160 2 100 100;

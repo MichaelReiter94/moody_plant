@@ -1,0 +1,289 @@
+#N canvas 261 144 1365 681 10;
+#X obj 571 150 cnv 30 393 190 empty empty empty 20 12 0 14 -135105
+-66577 0;
+#X msg 1202 552 -1;
+#X text 1234 552 clear whole text;
+#X obj 1376 462 openpanel;
+#X msg 1053 616 read \$1;
+#X symbolatom 1134 617 96 0 0 0 - - -, f 96;
+#X obj 1376 433 bng 22 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1053 339 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X symbolatom 1053 397 49 0 0 0 - - -, f 49;
+#X obj 1053 426 list append;
+#X obj 1053 451 l2s /;
+#X obj 1053 372 getdir 1;
+#X obj 1089 322 t b s;
+#X obj 1367 390 cnv 30 421 38 empty empty empty 20 12 0 14 -135105
+-66577 0;
+#X obj 1376 395 inlet;
+#X text 1422 400 inlet 3: bang opens the directory to load file from
+there;
+#X obj 1052 734 text define -k \$0-temp;
+#A set name metaData \; bpm 0 \; timePlayed 0 \; placeHolder \; placeHolder
+\; placeHolder \; placeHolder \; name batCountry_arpeggio.gp5 \; bpm
+50 \; timePlayed 79 \; placeHolder \; placeHolder \; placeHolder \;
+placeHolder \; name anastasiaSlash.gp5 \; bpm 71 \; timePlayed 131
+\; placeHolder \; placeHolder \; placeHolder \; placeHolder \; name
+theCrusadeTrivium.gp5 \; bpm 83 \; timePlayed 1205 \; placeHolder \;
+placeHolder \; placeHolder \; placeHolder \; name thunderstruckACDC_hammerOns.tg
+\; bpm 70 \; timePlayed 225 \; placeHolder \; placeHolder \; placeHolder
+\; placeHolder \; name snow_RHCP.gp5 \; timePlayed 135 \; timePlayed
+0 \; placeHolder \; placeHolder \; placeHolder \; placeHolder \; name
+constantMotionDreamTheater.gp5 \; bpm 50 \; timePlayed 147 \; placeHolder
+\; placeHolder \; placeHolder \; placeHolder \; name major.tg \; bpm
+139 \; timePlayed 2972 \; imageName major.jpg \; placeHolder \; placeHolder
+\; placeHolder \; name locrian.tg \; bpm 110 \; timePlayed 610 \; imageName
+locrian.jpg \; placeHolder \; placeHolder \; placeHolder \; name dorian.tg
+\; bpm 120 \; timePlayed 766 \; imageName dorian.jpg \; placeHolder
+\; placeHolder \; placeHolder \; name minor.tg \; bpm 123 \; timePlayed
+450 \; imageName minor.jpg \; placeHolder \; placeHolder \; placeHolder
+\; name lydian.tg \; bpm 109 \; timePlayed 1454 \; imageName lydian.jpg
+\; placeHolder \; link https://www.youtube.com/ \; placeHolder \; name
+phrygian.tg \; bpm 104 \; timePlayed 867 \; imageName phrygian.jpg
+\; placeHolder \; placeHolder \; placeHolder \; name mixolydian.tg
+\; bpm 100 \; timePlayed 775 \; imageName mixolydian.jpg \; placeHolder
+\; placeHolder \; placeHolder \; name danceMacabre-ghost.gpx \; bpm
+100 \; timePlayed 7319 \; placeHolder \; comment this is an awesome
+song \; placeHolder \; placeHolder \; name subfolderDorina.tg \; bpm
+50 \; timePlayed 0 \; placeHolder \; placeHolder \; placeHolder \;
+placeHolder \; name finger_Independence_stranger_things.tg \; bpm 58
+\; timePlayed 1211 \; placeHolder \; placeHolder \; link https://www.youtube.com/watch?v=elfgRX0DrYM
+\; placeHolder \; name avoid_a_flailing_pinky.tg \; bpm 50 \; timePlayed
+682 \; placeHolder \; placeHolder \; placeHolder \; placeHolder \;
+name three_string_minor.tg \; bpm 50 \; timePlayed 305 \; placeHolder
+\; placeHolder \; placeHolder \; placeHolder \; name three_string_major.tg
+\; bpm 50 \; timePlayed 1420 \; placeHolder \; placeHolder \; placeHolder
+\; placeHolder \; name alternatePickingExercise_downwardsPickslanting.tg
+\; bpm 103 \; timePlayed 1826 \; placeHolder \; placeHolder \; link
+https://www.youtube.com/watch?v=4hEStnP_EKc \; placeHolder \; name
+escape_the_fate_this_war_is_ours.gp5 \; bpm 50 \; timePlayed 0 \; placeHolder
+\; placeHolder \; placeHolder \; placeHolder \; name hand_synchronisation_and_chunking_6_notes_1_string.tg
+\; bpm 97 \; timePlayed 9281 \; placeHolder \; comment main focus of
+this exercise is "chunking": emphasize the first note of those 6 note
+chunks (the notes to emphasize are highlighted in the tux fileand they
+are played louder) - increase not only the spead but also the number
+of chromatic chunks - also change strings and starting fret \; link
+https://www.youtube.com/watch?v=i_UJU1Yb1jM&t=7s \; placeHolder \;
+name hand_synchronisation_and_chunking_6notes_1string_part2.tg \; bpm
+77 \; timePlayed 1204 \; placeHolder \; comment main focus of this
+exercise is "chunking": emphasize the first note of those 6 note chunks
+(the notes to emphasize are highlighted in the tux file and they are
+played louder) - increase not only the spead but also the number of
+chunks - also change strings and starting fret \; link https://www.youtube.com/watch?v=i_UJU1Yb1jM&t=7s
+\; placeHolder \; name hand_synchronisation_and_chunking_6notes_1string_part3.tg
+\; bpm 50 \; timePlayed 0 \; placeHolder \; comment main focus of this
+exercise is "chunking": emphasize the first note of those 6 note chunks
+(the notes to emphasize are highlighted in the tux file and they are
+played louder) - increase not only the spead but also the number of
+chunks - also change strings and starting fret \; link https://www.youtube.com/watch?v=i_UJU1Yb1jM&t=7s
+\; placeHolder \; name hand_synchronisation_and_chunking_4notes_1string.tg
+\; bpm 91 \; timePlayed 577 \; placeHolder \; comment main focus of
+this exercise is "chunking": emphasize the first note of those 4 note
+chunks (the notes to emphasize are highlighted in the tux file and
+they are played louder) - increase not only the spead but also the
+number of chunks - also change strings and starting fret \; link https://www.youtube.com/watch?v=i_UJU1Yb1jM&t=7s
+\; placeHolder \; name hand_synchronisation_and_chunking_4notes_1string_variations.tg
+\; bpm 93 \; timePlayed 3395 \; placeHolder \; comment main focus of
+this exercise is "chunking": emphasize the first note of those 4 note
+chunks (the notes to emphasize are highlighted in the tux file and
+they are played louder) - increase not only the spead but also the
+number of chunks - also change strings and starting fret \; link https://www.youtube.com/watch?v=i_UJU1Yb1jM&t=7s
+\; placeHolder \; name danceMacabre_ghost_solo.tg \; bpm 120 \; timePlayed
+685 \; placeHolder \; placeHolder \; placeHolder \; placeHolder \;
+name empty \; bpm 50 \; timePlayed 12 \; placeHolder \; placeHolder
+\; placeHolder \; placeHolder \; name killswitch_engage_my_curse.gp5
+\; bpm 50 \; timePlayed 0 \; placeHolder \; placeHolder \; placeHolder
+\; placeHolder \; name machine_head_locust_intro.gp5 \; bpm 112 \;
+timePlayed 2165 \; placeHolder \; placeHolder \; placeHolder \; placeHolder
+\; name atreyu_lip_gloss_and_black.gp4 \; bpm 50 \; timePlayed 0 \;
+placeHolder \; placeHolder \; placeHolder \; placeHolder \; name BFMV_your_betrayal.gp5
+\; bpm 50 \; timePlayed 376 \; placeHolder \; placeHolder \; placeHolder
+\; placeHolder \; name three_string_no_pull_offs.tg \; bpm 123 \; timePlayed
+1262 \; placeHolder \; comment tilt your pick when you change direction!!!
+keep your right hand "free" and "in the air" and not rested on the
+strings(?) \; placeHolder \; placeHolder \; name major_three_string_sweep.tg
+\; bpm 119 \; timePlayed 1491 \; placeHolder \; placeHolder \; placeHolder
+\; placeHolder \; name danceMacabre-ghost.tg \; bpm 127 \; timePlayed
+4236 \; placeHolder \; placeHolder \; placeHolder \; placeHolder \;
+name all_arpeggios_on_major_scale_three_strings.tg \; bpm 135 \; timePlayed
+17447 \; placeHolder \; comment the diminished arpeggio on the 7th
+degree is not included in this exercise yet........ to practice enter
+(F -) Ionian into the "Jammer" and play any chord progression and play
+the according shape from the tux file over it \; placeHolder \; placeHolder
+\; name minor_three_string_sweep.tg \; bpm 104 \; timePlayed 1088 \;
+placeHolder \; placeHolder \; placeHolder \; placeHolder \; name 3_strings_all_arpeggios_in_A_Minor_in_D_shape.tg
+\; bpm 161 \; timePlayed 5493 \; placeHolder \; placeHolder \; placeHolder
+\; placeHolder \; name Racer_X_Technical_Difficulties.gp5 \; bpm 131
+\; timePlayed 1748 \; placeHolder \; placeHolder \; placeHolder \;
+placeHolder \; name four_string_sweeps_major_and_minor.tg \; bpm 191
+\; timePlayed 6996 \; placeHolder \; placeHolder \; placeHolder \;
+placeHolder \; name A7X_Bat_Country_full_song.gp5 \; timePlayed 50
+\; timePlayed 9 \; placeHolder \; placeHolder \; placeHolder \; placeHolder
+\; name A7X_Strength_of_the_World_full_song.gp5 \; bpm 122 \; timePlayed
+24463 \; placeHolder \; placeHolder \; link https://www.youtube.com/watch?v=xBm5H2P0clc
+\; placeHolder \; name avenged_sevenfold_Scream.gp5 \; bpm 130 \; timePlayed
+2563 \; placeHolder \; placeHolder \; placeHolder \; placeHolder \;
+name 2_note_per_string_pentatonic_speed.tg \; bpm 101 \; timePlayed
+478 \; placeHolder \; placeHolder \; placeHolder \; placeHolder \;
+name 5_scale_shapes.tg \; bpm 50 \; timePlayed 0 \; placeHolder \;
+placeHolder \; placeHolder \; placeHolder \; name triplet_loop_on_one_and_two_strings.tg
+\; bpm 125 \; timePlayed 1998 \; placeHolder \; comment the lick is
+in A harmonic minor \, so there is a major 7th which is also the starting
+note. Try to play the lick in other scales as well---------------------------------
+when switching strings use economy picking \; link https://www.youtube.com/watch?v=uUZpmp7N_Cc
+\; placeHolder \; name chromatic_speed_build.tg \; bpm 100 \; timePlayed
+4653 \; placeHolder \; placeHolder \; placeHolder \; placeHolder \;
+name Trivium_caustic_are_the_ties_tha_bind_intro.gp5 \; bpm 50 \; timePlayed
+0 \; placeHolder \; placeHolder \; placeHolder \; placeHolder \; name
+Pantera_cowboys_from_hell.gp3 \; bpm 50 \; timePlayed 0 \; placeHolder
+\; placeHolder \; placeHolder \; placeHolder \; name basic_economy_build_up.tg
+\; bpm 176 \; timePlayed 4653 \; placeHolder \; placeHolder \; placeHolder
+\; placeHolder \; name Ghost_Square\ Hammer.gp5 \; bpm 50 \; timePlayed
+617 \; placeHolder \; placeHolder \; placeHolder \; placeHolder \;
+name Ghost_Rats.gpx \; bpm 50 \; timePlayed 0 \; placeHolder \; placeHolder
+\; placeHolder \; placeHolder \; name Ghost_Square\ Hammer.tg \; bpm
+50 \; timePlayed 0 \; placeHolder \; placeHolder \; placeHolder \;
+placeHolder \; name Ghost_Square\ _Hammer.tg \; bpm 50 \; timePlayed
+0 \; placeHolder \; placeHolder \; placeHolder \; placeHolder \; name
+Ghost_Sqaure_Hammer.tg \; bpm 50 \; timePlayed 0 \; placeHolder \;
+placeHolder \; placeHolder \; placeHolder \; name Ghost_Rats.tg \;
+bpm 123 \; timePlayed 12009 \; placeHolder \; placeHolder \; link https://www.youtube.com/watch?v=DPdL4OHlrdU
+\; placeHolder \; name seventh_arpeggios.tg \; bpm 50 \; timePlayed
+0 \; placeHolder \; placeHolder \; placeHolder \; placeHolder \; name
+A7X_Strength_of_the_World_full_song.gp5 \; bpm 50 \; timePlayed 0 \;
+placeHolder \; placeHolder \; placeHolder \; placeHolder \;;
+#X obj 1202 584 text delete \$0-temp;
+#X floatatom 683 603 5 0 0 0 - - -, f 5;
+#X obj 683 542 text get \$0-temp;
+#X obj 683 577 list length;
+#X obj 796 542 text size \$0-temp;
+#X floatatom 796 603 5 0 0 0 - - -, f 5;
+#X obj 796 460 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 128 31 cnv 30 375 82 empty empty empty 20 12 0 14 -4096 -66577
+0;
+#X text 134 94 but with a blank space separating it from the line itself
+;
+#X obj 560 705 cnv 30 294 37 empty empty empty 20 12 0 14 -258049 -66577
+0;
+#X obj 579 714 outlet;
+#X obj 683 714 outlet;
+#X obj 796 714 outlet;
+#X text 433 754 outlet 1: list of the defined line of the text;
+#X text 532 788 outlet 2: number of elements in the line that is output
+in outlet 1;
+#X text 733 756 outlet 3: number of lines of the text;
+#X obj 683 446 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 522 471 cnv 30 194 46 empty empty empty 20 12 0 14 -135105 -66577
+0;
+#X obj 1053 535 t s b;
+#X floatatom 372 388 5 0 0 0 - - -, f 5;
+#X obj 683 404 t b f;
+#X obj 1088 217 route local global;
+#X obj 1193 244 print needs to define if "global" or "local";
+#X obj 1202 521 loadbang;
+#X obj 1231 175 route init;
+#X obj 1231 155 list trim;
+#X obj 1222 29 cnv 30 406 85 empty empty empty 20 12 0 14 -135105 -66577
+0;
+#X obj 1231 37 loadbang;
+#X obj 1231 130 s2l *;
+#X text 1306 58 if the prepended "init*" is missing it will not work
+;
+#X text 1305 79 subfolders are possible though: "init*subfolder/filename.txt"
+, f 52;
+#X obj 419 497 text set \$0-temp;
+#X floatatom 683 521 5 0 0 0 - - -, f 5;
+#X msg 1101 691 write \$1;
+#X obj 1101 661 symbol;
+#X obj 997 639 bng 22 250 50 0 empty empty save 0 24 0 10 -4033 -1
+-1;
+#X text 631 195 - "readLine" + float (which line should be output)
+;
+#X text 631 220 - "replace" + list (replacces the old line);
+#X text 631 242 - "load" + "local" or "global" + directory (from local
+folder or global path);
+#X obj 358 150 cnv 30 217 76 empty empty empty 20 12 0 14 -135105 -66577
+0;
+#X obj 372 163 inlet;
+#X text 134 36 each line in the text file must be terminated with a
+semicolon \; ;
+#X text 631 277 - save (overwrite loaded file with current state);
+#X obj 615 368 print no precursor/flag matched a route option;
+#X obj 419 306 list;
+#X text 418 159 the inlet needs a list with one of these "flags" as
+precursor:;
+#X text 533 476 creation argument 2:;
+#X text 534 498 read line number \$2;
+#X obj 683 479 i \$2;
+#X text 1306 39 initialization argument 1: "init*filename.txt";
+#X obj 1231 61 symbol \$1;
+#X obj 372 200 route readLine replace load save newEntry;
+#X msg 340 480 1e+006;
+#X obj 254 480 t l b;
+#X obj 254 217 list;
+#X text 194 217 new entry;
+#X text 631 299 - newEntry (writes a line in the end of the document)
+;
+#X obj 893 445 loadbang;
+#X obj 893 470 del 200;
+#X connect 1 0 17 0;
+#X connect 3 0 35 0;
+#X connect 4 0 16 0;
+#X connect 5 0 51 1;
+#X connect 6 0 3 0;
+#X connect 7 0 11 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 35 0;
+#X connect 11 0 8 0;
+#X connect 12 0 7 0;
+#X connect 12 1 9 1;
+#X connect 14 0 6 0;
+#X connect 18 0 28 0;
+#X connect 19 0 20 0;
+#X connect 19 0 27 0;
+#X connect 20 0 18 0;
+#X connect 21 0 22 0;
+#X connect 22 0 29 0;
+#X connect 23 0 21 0;
+#X connect 33 0 23 0;
+#X connect 33 0 65 0;
+#X connect 35 0 4 0;
+#X connect 35 0 5 0;
+#X connect 35 1 1 0;
+#X connect 36 0 37 0;
+#X connect 37 0 33 0;
+#X connect 37 1 65 1;
+#X connect 38 0 12 0;
+#X connect 38 1 35 0;
+#X connect 38 2 39 0;
+#X connect 40 0 1 0;
+#X connect 41 0 12 0;
+#X connect 42 0 41 0;
+#X connect 44 0 67 0;
+#X connect 45 0 42 0;
+#X connect 49 0 19 0;
+#X connect 50 0 16 0;
+#X connect 51 0 50 0;
+#X connect 52 0 51 0;
+#X connect 57 0 68 0;
+#X connect 61 0 48 0;
+#X connect 65 0 48 1;
+#X connect 65 0 49 0;
+#X connect 67 0 45 0;
+#X connect 68 0 36 0;
+#X connect 68 1 61 0;
+#X connect 68 2 38 0;
+#X connect 68 3 52 0;
+#X connect 68 4 71 0;
+#X connect 68 5 60 0;
+#X connect 69 0 48 1;
+#X connect 70 0 48 0;
+#X connect 70 1 69 0;
+#X connect 71 0 70 0;
+#X connect 74 0 75 0;
+#X connect 75 0 21 0;

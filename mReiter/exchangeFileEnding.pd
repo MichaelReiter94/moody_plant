@@ -1,0 +1,31 @@
+#N canvas 0 0 1349 665 10;
+#X obj 835 236 cnv 30 383 38 empty empty empty 20 12 0 14 -4096 -66577
+0;
+#X obj 839 146 cnv 30 435 54 empty empty empty 20 12 0 14 -4033 -66577
+0;
+#X obj 382 146 cnv 30 394 34 empty empty empty 20 12 0 14 -4033 -66577
+0;
+#X obj 731 156 inlet;
+#X obj 731 187 symbol;
+#X obj 731 212 s2l .;
+#X obj 731 237 zl nth 1;
+#X obj 731 262 pack s s;
+#X obj 731 287 l2s .;
+#X obj 846 156 inlet;
+#X obj 846 245 symbol \$1;
+#X obj 896 203 loadbang;
+#X obj 731 322 outlet;
+#X text 384 156 inlet 1: message or symbol with filename.fileending
+;
+#X text 905 156 inlet 2: alternate fileending that should replace the
+other one (for example "txt" or "jpg" --> not "." in the argument;
+#X text 952 245 creation argument 1: same as the 2nd inlet;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 12 0;
+#X connect 9 0 10 0;
+#X connect 10 0 7 1;
+#X connect 11 0 10 0;

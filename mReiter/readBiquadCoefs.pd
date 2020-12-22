@@ -1,0 +1,122 @@
+#N canvas 0 0 1252 613 10;
+#X obj 715 190 t b p;
+#X obj 715 239 text get -s text t;
+#X msg 715 214 0;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array \$0-coefs 5 float 3 black black;
+#A 0 1.92597 -0.928617 0.000660776 0.00132155 0.000660776;
+#X coords 0 3 5 -3 362 286 1;
+#X restore 582 317 graph;
+#X obj 434 275 until;
+#X obj 434 297 counter;
+#X floatatom 434 320 5 0 0 0 - - -, f 5;
+#X obj 434 246 t f b;
+#X obj 338 427 zl nth;
+#X floatatom 371 402 5 0 0 0 - - -, f 5;
+#X obj 338 358 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 338 452 13 0 0 0 - - -, f 13;
+#X obj 434 341 t b f f;
+#X msg 1104 96 -1;
+#X text 1137 12 clear whole text;
+#X obj 767 62 openpanel;
+#X msg 715 134 read \$1;
+#X symbolatom 767 106 53 0 0 0 - - -, f 53;
+#X obj 767 30 bng 29 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 166 153 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 166 203 5 0 0 0 - - -, f 5;
+#X msg 434 157 5;
+#X obj 371 358 + 1;
+#X obj 338 390 list;
+#X text 336 28 which line to read (=one line = one filter with 5 coefficients)
+;
+#X obj 332 110 hradio 21 0 0 4 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 332 140 t b f;
+#X text 468 157 number of values to write to array;
+#X msg 1105 208 \; \$0-coefs const 0;
+#X obj 374 484 tabwrite \$0-coefs;
+#X text 810 0 load textfile containing filter coefficients. After each
+filter (after five coeffs.) " \; " needs to be to separate the diferent
+filters;
+#X obj 715 162 text define -k \$0-filterCoefs;
+#A set 1.92597 -0.928617 0.000660776 0.00132155 0.000660776 \; 1.94633
+-0.948999 0.000667759 0.00133552 0.000667759 \; 1.94633 -0.948999 0.000667759
+0.00133552 0.000667759;
+#X obj 359 186 text get \$0-filterCoefs;
+#X obj 166 178 text size \$0-filterCoefs;
+#X obj 139 232 moses;
+#X msg 166 338 done;
+#X floatatom 140 131 5 0 0 0 - - -, f 5;
+#X msg 139 298 set done;
+#X obj 166 95 del 100;
+#X obj 767 3 inlet;
+#X obj 166 384 outlet;
+#X obj 332 6 inlet;
+#X msg 166 266 set not that many filters available;
+#X obj 60 407 outlet;
+#X text 45 443 outputs a list of biquad filter coefficients;
+#X text 45 477 in the following order: a1 \, a2 \, b0 \, b1 \, b2;
+#X text 45 514 a0 is per (PD) definition = 1 and does not need to be
+expressed;
+#X text 45 559 a-Terms are Poles (in the denominator) \, b-Terms are
+Zeroes;
+#X obj 715 22 inlet;
+#X obj 715 79 t s b b;
+#X obj 1104 118 text delete \$0-filterCoefs;
+#X obj 459 68 i \$1;
+#X floatatom 459 93 5 0 0 0 - - -, f 5;
+#X obj 459 45 loadbang;
+#X connect 0 0 2 0;
+#X connect 0 1 1 3;
+#X connect 2 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 12 0;
+#X connect 7 0 4 0;
+#X connect 7 1 5 2;
+#X connect 8 0 11 0;
+#X connect 9 0 8 1;
+#X connect 10 0 23 0;
+#X connect 11 0 29 0;
+#X connect 12 0 10 0;
+#X connect 12 1 22 0;
+#X connect 12 2 29 1;
+#X connect 13 0 50 0;
+#X connect 15 0 17 0;
+#X connect 15 0 49 0;
+#X connect 16 0 31 0;
+#X connect 18 0 15 0;
+#X connect 19 0 33 0;
+#X connect 20 0 34 1;
+#X connect 21 0 7 0;
+#X connect 22 0 9 0;
+#X connect 23 0 8 0;
+#X connect 23 0 43 0;
+#X connect 25 0 26 0;
+#X connect 25 0 36 0;
+#X connect 26 0 21 0;
+#X connect 26 1 32 0;
+#X connect 31 0 0 0;
+#X connect 32 0 23 1;
+#X connect 33 0 20 0;
+#X connect 34 0 37 0;
+#X connect 34 1 42 0;
+#X connect 35 0 40 0;
+#X connect 36 0 34 0;
+#X connect 37 0 35 0;
+#X connect 37 0 40 0;
+#X connect 38 0 19 0;
+#X connect 39 0 18 0;
+#X connect 41 0 25 0;
+#X connect 42 0 35 0;
+#X connect 42 0 40 0;
+#X connect 48 0 49 0;
+#X connect 49 0 16 0;
+#X connect 49 1 38 0;
+#X connect 49 2 13 0;
+#X connect 51 0 52 0;
+#X connect 52 0 25 0;
+#X connect 53 0 51 0;

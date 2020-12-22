@@ -1,0 +1,17 @@
+#N canvas -8 -8 1904 986 10;
+#X obj 819 689 system;
+#X msg 819 608 start;
+#X obj 819 633 list;
+#X obj 819 659 list trim;
+#X obj 819 476 inlet;
+#X obj 819 581 t b s;
+#X text 898 469 inlet: symbol with full global path of a file;
+#X text 898 493 must not contain empty spaces in the name of the path!!!!
+;
+#X text 898 516 said file will be opened (if possible?);
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 5 1 2 1;

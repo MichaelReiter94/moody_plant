@@ -1,0 +1,85 @@
+#N canvas 683 0 667 669 10;
+#X obj 209 490 cnv 15 100 60 empty empty empty 20 12 0 14 -258113 -66577
+0;
+#X obj 373 7 cnv 15 400 50 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#X obj 233 360 phasor~;
+#X floatatom 239 279 5 0 0 0 - - -, f 5;
+#X obj 317 236 s sampleSize;
+#X obj 233 389 *~;
+#X obj 263 89 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#X floatatom 284 214 8 0 0 0 - - -, f 8;
+#X obj 152 318 hsl 128 15 0 3 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 189 1;
+#X obj 284 262 expr 44100 / $f1;
+#X obj 232 469 *~;
+#X obj 390 338 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6350 1;
+#X floatatom 329 525 8 0 0 0 - - -, f 8;
+#X obj 329 549 s position;
+#X obj 330 502 unsig~ 30;
+#X msg 149 294 0;
+#X obj 204 269 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 204 293 1 *;
+#X obj 290 372 r sampleSize;
+#X obj 264 107 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113
+-1 -1;
+#X text 294 289 Anzahl Samples/Sekunde durch gesammte Samples = 1s/gesammte
+s --> abspielgeschwindigkeit;
+#X text 413 505 Position vom Phasor für den Balken darunter;
+#X text 473 335 Phasor = Sägezahnschwingung von 0 bis 1 abgespielt
+in seeehr langsamer Geschwindigkeit;
+#X obj 156 90 hsl 100 15 0.01 2 1 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 284 190 arraysize;
+#X obj 451 39 inlet;
+#X symbolatom 451 102 10 0 0 0 - - -, f 10;
+#X obj 451 61 pack s;
+#X obj 451 80 unpack s;
+#X obj 231 502 outlet~;
+#X text 371 10 name (als messagebox) vom array festlegen welches gelesen
+wird;
+#X obj 157 107 hsl 100 15 0 1 0 0 empty position empty -2 -8 0 10 -262144
+-1 -1 5567 1;
+#X text 39 83 speed;
+#X text 15 108 positionsanzeiger;
+#X obj 436 433 loadbang;
+#X msg 436 454 0.5;
+#X obj 232 436 tabread4~;
+#X msg 138 418 set \$1;
+#X obj 263 144 t b b b;
+#X connect 2 0 5 0;
+#X connect 2 0 14 0;
+#X connect 3 0 17 1;
+#X connect 5 0 36 0;
+#X connect 6 0 38 0;
+#X connect 7 0 4 0;
+#X connect 7 0 9 0;
+#X connect 8 0 2 0;
+#X connect 9 0 3 0;
+#X connect 10 0 29 0;
+#X connect 11 0 10 1;
+#X connect 12 0 13 0;
+#X connect 14 0 12 0;
+#X connect 15 0 8 0;
+#X connect 16 0 17 0;
+#X connect 17 0 8 0;
+#X connect 18 0 5 1;
+#X connect 19 0 15 0;
+#X connect 23 0 8 0;
+#X connect 24 0 7 0;
+#X connect 25 0 27 0;
+#X connect 26 0 24 1;
+#X connect 26 0 37 0;
+#X connect 27 0 28 0;
+#X connect 28 0 26 0;
+#X connect 34 0 35 0;
+#X connect 35 0 11 0;
+#X connect 36 0 10 0;
+#X connect 37 0 36 0;
+#X connect 38 0 16 0;
+#X connect 38 1 24 0;
+#X connect 38 2 27 0;
+#X coords 0 -1 1 1 130 40 1 150 85;

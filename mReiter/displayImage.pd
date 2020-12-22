@@ -1,0 +1,81 @@
+#N canvas 0 0 1349 665 10;
+#X obj 486 305 cnv 30 439 68 empty empty empty 20 12 0 14 -135168 -66577
+0;
+#X msg 756 572 open \$1;
+#X obj 323 160 route bang;
+#X obj 323 185 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 444 200 print no data stored;
+#X obj 420 177 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 381 442 pack s s s s;
+#X obj 404 402 symbol /;
+#X obj 413 276 getdir 1;
+#X obj 380 303 symbol;
+#X obj 488 259 loadbang;
+#X obj 488 309 symbol \$1;
+#X obj 381 484 l2s;
+#X obj 416 467 symbol;
+#X obj 463 467 loadbang;
+#X obj 380 231 t b s;
+#X obj 380 200 symbol;
+#X obj 572 416 route global;
+#X obj 1020 302 symbol;
+#X obj 648 121 demux . .;
+#X obj 699 455 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 699 92 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 572 438 1;
+#X msg 641 438 0;
+#X obj 488 399 list trim;
+#X text 563 305 creation argument "NameOfAsubfolder/" if the image
+is in a subfolder;
+#X text 563 343 if you put "global" as creation argument \, you can
+input a global path instead of a local one;
+#X obj 639 25 cnv 30 468 59 empty empty empty 20 12 0 14 -135137 -66577
+0;
+#X obj 648 29 inlet;
+#X text 696 53 standard: local path --> just a filename is enough if
+its in the same folder as the main patch;
+#X text 696 28 inlet: path to the image as message or symbl;
+#N canvas 425 150 1007 696 \$0-image 1;
+#X obj 200 162 image D:/Diverses/PureData/2019onwards/Pd_GuitarApp/images/silverMedal.jpg
+0;
+#X obj -303 -158 inlet;
+#X connect 1 0 0 0;
+#X restore 756 597 pd \$0-image;
+#X msg 618 586 \; pd-\$0-image vis 1;
+#X connect 1 0 31 0;
+#X connect 2 0 3 0;
+#X connect 2 1 5 0;
+#X connect 2 1 16 0;
+#X connect 3 0 4 0;
+#X connect 6 0 12 0;
+#X connect 7 0 6 1;
+#X connect 8 0 9 1;
+#X connect 9 0 6 0;
+#X connect 10 0 11 0;
+#X connect 10 0 7 0;
+#X connect 10 0 8 0;
+#X connect 11 0 6 2;
+#X connect 11 0 24 0;
+#X connect 12 0 1 0;
+#X connect 12 0 32 0;
+#X connect 13 0 12 1;
+#X connect 14 0 13 0;
+#X connect 15 0 9 0;
+#X connect 15 1 6 3;
+#X connect 16 0 15 0;
+#X connect 17 0 22 0;
+#X connect 17 1 23 0;
+#X connect 18 0 1 0;
+#X connect 18 0 32 0;
+#X connect 19 0 2 0;
+#X connect 19 1 18 0;
+#X connect 20 0 21 0;
+#X connect 21 0 19 1;
+#X connect 22 0 20 0;
+#X connect 23 0 20 0;
+#X connect 24 0 17 0;
+#X connect 28 0 19 0;

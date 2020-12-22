@@ -1,0 +1,7 @@
+#N canvas 683 50 667 669 10;
+#X declare -stdpath iemlib;
+#X declare -lib zexy;
+#X declare -stdpath cyclone;
+#X obj 257 193 declare -stdpath iemlib;
+#X obj 258 213 declare -lib zexy;
+#X obj 259 237 declare -stdpath cyclone;

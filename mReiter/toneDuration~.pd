@@ -1,0 +1,70 @@
+#N canvas 0 50 1366 685 10;
+#X obj 1090 276 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1090 365 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1090 321 timeOffset;
+#X floatatom 1147 299 5 0 0 0 - - -, f 5;
+#X obj 559 331 line~;
+#X obj 642 321 line;
+#X floatatom 642 347 5 0 0 0 - - -, f 5;
+#X msg 559 304 \$1 \$2;
+#X obj 559 280 pack f f;
+#X obj 559 199 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 559 145 0;
+#X obj 958 237 spigot;
+#X obj 958 214 t b f;
+#X msg 958 259 1;
+#X obj 612 234 loadbang;
+#X msg 612 259 250;
+#X obj 444 71 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 559 447 outlet~;
+#X obj 444 48 inlet;
+#X text 365 22 trigger für die Note die gespielt werden soll;
+#X obj 832 23 inlet;
+#X floatatom 832 84 5 0 0 0 - - -, f 5;
+#X text 542 487 Outlet verbinden mit [*~]... in etwa wie auf der linken
+Seitenhälfte demonstriert;
+#X obj 1147 276 + 0;
+#X text 870 70 inlet für die Dauer der Note in milisekunden (aber
+nur zum "auframpen" \, abrampen dauert noch einmal die Zeit plus "x"
+ms);
+#X text 1126 248 Note längerhalten in milisekunden;
+#X obj 832 107 / 3;
+#X obj 851 130 * 2;
+#X floatatom 795 145 5 0 0 0 - - -, f 5;
+#X obj 832 51 f \$1;
+#X obj 911 34 loadbang;
+#X obj 164 98 dsp;
+#X connect 0 0 2 0;
+#X connect 1 0 10 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 1;
+#X connect 4 0 17 0;
+#X connect 5 0 6 0;
+#X connect 7 0 4 0;
+#X connect 7 0 5 0;
+#X connect 8 0 7 0;
+#X connect 9 0 8 0;
+#X connect 9 0 12 0;
+#X connect 10 0 9 0;
+#X connect 11 0 13 0;
+#X connect 12 0 11 0;
+#X connect 12 1 11 1;
+#X connect 13 0 0 0;
+#X connect 14 0 15 0;
+#X connect 15 0 8 1;
+#X connect 15 0 23 0;
+#X connect 16 0 9 0;
+#X connect 18 0 16 0;
+#X connect 20 0 29 0;
+#X connect 21 0 26 0;
+#X connect 23 0 3 0;
+#X connect 26 0 27 0;
+#X connect 26 0 28 0;
+#X connect 27 0 23 0;
+#X connect 28 0 8 1;
+#X connect 29 0 21 0;
+#X connect 30 0 29 0;

@@ -1,0 +1,151 @@
+#N canvas 0 0 1349 665 10;
+#X obj 746 247 bng 25 250 50 0 empty empty empty 17 7 0 10 -2049 -1
+-1;
+#X obj 746 365 list;
+#X obj 794 365 list;
+#X obj 746 327 folder_list D:/Diverses/PureData/2019onwards/Pd_GuitarApp/Tux_Guitar/*
+;
+#X obj 914 418 list length;
+#X floatatom 914 439 5 0 0 0 - - -, f 5;
+#X obj 725 587 zl nth;
+#X symbolatom 725 641 68 0 0 0 - - -, f 68;
+#X obj 746 389 list trim;
+#X obj 725 612 l2s;
+#X obj 881 469 random;
+#X obj 881 494 + 1;
+#X floatatom 881 519 5 0 0 0 - - -, f 5;
+#X obj 725 563 list;
+#X obj 881 546 t b f;
+#X obj 842 446 bng 23 250 50 0 empty empty empty 17 7 0 10 -4033 -1
+-1;
+#X msg 768 302 list;
+#X text 776 472 choose randomly;
+#X obj 1454 476 cnv 30 302 78 empty empty empty 20 12 0 14 -4033 -66577
+0;
+#X obj 1298 184 cnv 30 476 60 empty empty empty 20 12 0 14 -4033 -66577
+0;
+#X obj 1272 290 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X symbolatom 1272 422 66 0 0 0 - - -, f 66;
+#X obj 1320 188 inlet;
+#X obj 1320 248 t b s;
+#X obj 1469 487 inlet;
+#X obj 1272 602 l2s;
+#X msg 1367 585 symbol;
+#X obj 1367 561 loadbang;
+#X symbolatom 1272 627 68 0 0 0 - - -, f 68;
+#X obj 1272 550 list append;
+#X msg 1246 157 symbol;
+#X obj 1272 444 list append /*;
+#X obj 1272 347 list append *;
+#X msg 1396 374 symbol;
+#X obj 1396 348 loadbang;
+#X obj 1272 391 l2s;
+#X msg 1592 533 .txt;
+#X text 1386 190 sepecifiy the subfolder (starting where you are currently)
+;
+#X text 1389 214 must have the form "/nameOfSubfolder" and must not
+contain blank spaces;
+#X text 1540 487 specify the endings to search for;
+#X text 1540 509 must ahve form ".ending";
+#X msg 1246 132 /Tux_Guitar;
+#X msg 1631 533 symbol;
+#X obj 1272 313 getdir 1;
+#X obj 1320 215 symbol \$1;
+#X obj 1469 509 symbol \$2;
+#X obj 842 198 t b b b b;
+#X obj 20 26 cnv 30 383 234 empty empty empty 20 12 0 14 -4096 -66577
+0;
+#X text 32 93 initialisation arguments:;
+#X text 32 114 argument 1 = subfolder name (= inlet 2);
+#X text 32 135 argument 2 = file ending (= inlet 3);
+#X text 32 168 if you want all .txt files in the main folder initialize
+like that: "openFile / .txt";
+#X text 32 209 if you want all pure data files in a subfolder write
+"openFile /subfolder/subsubfolder .pd";
+#X obj 449 137 cnv 30 444 57 empty empty empty 20 12 0 14 -4033 -66577
+0;
+#X obj 842 155 inlet;
+#X text 470 151 bang to output a random file path for the chosen directory
+and file endings;
+#X obj 709 665 cnv 30 444 57 empty empty empty 20 12 0 14 -258049 -66577
+0;
+#X obj 725 686 outlet;
+#X text 783 688 random file path for the chosen directory and file
+endings;
+#X text 794 247 load a list of all possible files;
+#X obj 1230 215 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1230 494 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 849 729 cnv 30 485 86 empty empty empty 20 12 0 14 -258049 -66577
+0;
+#X obj 914 781 outlet;
+#X text 988 781 number of files found for the chosen directory and
+file endings;
+#X text 32 36 outputs the global path of a random file in the (current)
+directory. you can enter subfolders and specify a file ending to restrict
+the randomness;
+#X obj 851 738 outlet;
+#X obj 615 721 list trim;
+#X text 912 731 outputs a list with all paths of the containing files
+in that folder;
+#X obj 746 277 t b b b, f 8;
+#X msg 630 294 list empty;
+#X connect 0 0 69 0;
+#X connect 1 0 2 0;
+#X connect 1 0 8 0;
+#X connect 2 0 1 1;
+#X connect 3 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 10 1;
+#X connect 5 0 63 0;
+#X connect 6 0 9 0;
+#X connect 7 0 57 0;
+#X connect 8 0 4 0;
+#X connect 8 0 13 1;
+#X connect 9 0 7 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 14 0;
+#X connect 13 0 6 0;
+#X connect 13 0 67 0;
+#X connect 14 0 13 0;
+#X connect 14 1 6 1;
+#X connect 15 0 10 0;
+#X connect 16 0 1 1;
+#X connect 20 0 43 0;
+#X connect 21 0 31 0;
+#X connect 22 0 44 0;
+#X connect 23 0 20 0;
+#X connect 23 1 32 1;
+#X connect 24 0 45 0;
+#X connect 25 0 28 0;
+#X connect 26 0 25 1;
+#X connect 27 0 26 0;
+#X connect 28 0 3 1;
+#X connect 29 0 25 0;
+#X connect 30 0 23 0;
+#X connect 31 0 29 0;
+#X connect 32 0 35 0;
+#X connect 33 0 35 1;
+#X connect 34 0 33 0;
+#X connect 35 0 21 0;
+#X connect 36 0 29 1;
+#X connect 41 0 23 0;
+#X connect 42 0 29 1;
+#X connect 43 0 32 0;
+#X connect 44 0 23 0;
+#X connect 45 0 29 1;
+#X connect 46 0 15 0;
+#X connect 46 1 0 0;
+#X connect 46 2 44 0;
+#X connect 46 3 60 0;
+#X connect 54 0 46 0;
+#X connect 60 0 61 0;
+#X connect 61 0 45 0;
+#X connect 67 0 66 0;
+#X connect 69 0 3 0;
+#X connect 69 1 16 0;
+#X connect 69 2 70 0;
+#X connect 70 0 13 1;

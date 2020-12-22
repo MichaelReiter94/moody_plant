@@ -1,0 +1,69 @@
+#N canvas -1928 -8 1280 650 10;
+#X obj 610 72 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 677 104 0;
+#X obj 610 139 t b b;
+#X floatatom 376 198 5 0 0 0 - - -;
+#X obj 514 206 counter;
+#X obj 726 191 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 743 188 reset;
+#X obj 514 156 timeOffset 100;
+#X obj 8 8 metro 50;
+#X obj 10 39 counter;
+#X obj 9 -28 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array null 15 float 3;
+#A 0 12 156 314 458 616 760 918 1118 0 0 0 0 0 0 0;
+#X coords 0 1000 15 0 200 140 1;
+#X restore 48 214 graph;
+#X floatatom 516 296 5 0 0 0 - - -;
+#X obj 442 338 tabwrite null;
+#X msg 41 475 \; null bounds 0 1000 15 0;
+#X obj 677 397 tabdump null;
+#X obj 677 371 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 718 446 print;
+#X msg 48 418 \; null ylabel -1 100 200 400 600 800 1000;
+#X msg 726 294 \; null const 0;
+#X obj 557 409 gr.bng 12;
+#X obj 608 449 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 336 -13 cnv 45 580 70 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#X obj 472 489 cnv 35 350 60 empty empty empty 20 12 0 14 -258113 -66577
+0;
+#X obj 376 10 inlet;
+#X obj 610 10 inlet;
+#X obj 726 38 inlet;
+#X text 342 -10 counter \, der schnell die stellen im Array durchzählt
+;
+#X text 465 27 bang jedes mal wenn zB 0 erreicht wird;
+#X text 713 19 array und counter zurücksetzen;
+#X obj 608 500 outlet;
+#X text 492 522 bangt wenn der gefragte wert 12 mal erreicht wurde
+;
+#X obj 607 293 timeOffset 2500;
+#X connect 0 0 2 0;
+#X connect 2 0 7 0;
+#X connect 2 1 1 0;
+#X connect 3 0 13 0;
+#X connect 4 0 12 0;
+#X connect 4 0 32 0;
+#X connect 5 0 4 2;
+#X connect 5 0 19 0;
+#X connect 7 0 4 0;
+#X connect 8 0 9 0;
+#X connect 9 0 3 0;
+#X connect 10 0 8 0;
+#X connect 12 0 13 1;
+#X connect 12 0 20 0;
+#X connect 15 0 17 0;
+#X connect 16 0 15 0;
+#X connect 20 1 21 0;
+#X connect 21 0 30 0;
+#X connect 24 0 3 0;
+#X connect 25 0 0 0;
+#X connect 26 0 5 0;
+#X connect 32 0 21 0;

@@ -1,0 +1,110 @@
+#N canvas -3 14 1888 970 10;
+#X obj 658 130 cnv 30 194 35 empty empty empty 20 12 0 14 -135105 -66577
+0;
+#X obj 900 723 cnv 30 102 43 empty empty empty 20 12 0 14 -258049 -66577
+0;
+#X obj 1190 723 cnv 30 100 43 empty empty empty 20 12 0 14 -258049
+-66577 0;
+#X obj 1156 567 t b p;
+#X obj 1156 616 text get -s text t;
+#X msg 1156 591 0;
+#X msg 1378 480 -1;
+#X text 1410 480 clear whole text;
+#X obj 1139 430 openpanel;
+#X msg 1156 511 read \$1;
+#X symbolatom 1216 447 53 0 0 0 - - -, f 53;
+#X obj 1139 398 bng 29 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 994 515 del 100;
+#X obj 928 737 outlet;
+#X msg 994 545 0;
+#X obj 1156 539 text define -k \$0-FIR;
+#A set 1 2 3 4 5;
+#X obj 994 571 text get \$0-FIR;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array \$0-temp_IR 5 float 1 black black;
+#A 0 0 0 0 0 0;
+#X coords 0 0.1 4 -0.1 523 99 1;
+#X restore 739 894 graph;
+#X obj 994 613 list length;
+#X floatatom 994 639 5 0 0 0 - - -, f 5;
+#X obj 822 534 del 100;
+#X obj 1139 462 t s s b b;
+#X obj 822 557 symbol;
+#X obj 1378 511 text delete \$0-FIR;
+#X msg 994 672 \; \$0-temp_IR resize \$1;
+#X obj 803 140 inlet;
+#X obj 633 388 loadbang;
+#X obj 633 417 symbol \$1;
+#X symbolatom 633 442 17 0 0 0 - - -, f 17;
+#X msg 676 631 \; \$2 read \$1;
+#X msg 586 739 \; \$2 resize \$1;
+#X obj 732 583 pack s s;
+#X obj 586 712 pack f s;
+#X obj 1214 737 outlet;
+#X obj 663 139 inlet;
+#X obj 716 189 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X symbolatom 715 247 49 0 0 0 - - -, f 49;
+#X obj 714 276 list append;
+#X obj 714 301 l2s /;
+#X obj 715 222 getdir 1;
+#X obj 756 174 t b s;
+#X text 1008 735 length of the list;
+#X text 1297 742 path from which the list has been loaded;
+#X text 305 133 inlet 1: name of the text file if the file is in the
+same folder as the pd patch;
+#X text 858 138 inlet 2: name of the array to be written on to;
+#X obj 382 408 cnv 30 244 41 empty empty empty 20 12 0 14 -135105 -66577
+0;
+#X text 444 410 creation argument:;
+#X text 396 429 name of the array to be written on to;
+#X obj 1138 183 cnv 30 97 72 empty empty empty 20 12 0 14 -135105 -66577
+0;
+#X obj 1147 191 inlet;
+#X text 1193 190 inlet 3: bang opens the directory to load file from
+there;
+#X obj 1195 226 inlet;
+#X text 1240 226 inlet 4: full (gobal) directory path to the text file
+;
+#X connect 3 0 5 0;
+#X connect 3 1 4 3;
+#X connect 5 0 4 0;
+#X connect 6 0 23 0;
+#X connect 8 0 10 0;
+#X connect 8 0 21 0;
+#X connect 9 0 15 0;
+#X connect 10 0 33 0;
+#X connect 11 0 8 0;
+#X connect 12 0 14 0;
+#X connect 12 0 20 0;
+#X connect 14 0 16 0;
+#X connect 15 0 3 0;
+#X connect 16 0 18 0;
+#X connect 18 0 13 0;
+#X connect 18 0 19 0;
+#X connect 19 0 24 0;
+#X connect 19 0 32 0;
+#X connect 20 0 22 0;
+#X connect 21 0 22 1;
+#X connect 21 1 9 0;
+#X connect 21 2 12 0;
+#X connect 21 3 6 0;
+#X connect 22 0 31 0;
+#X connect 25 0 27 0;
+#X connect 26 0 27 0;
+#X connect 27 0 28 0;
+#X connect 28 0 31 1;
+#X connect 28 0 32 1;
+#X connect 31 0 29 0;
+#X connect 32 0 30 0;
+#X connect 34 0 40 0;
+#X connect 35 0 39 0;
+#X connect 36 0 37 0;
+#X connect 37 0 38 0;
+#X connect 38 0 21 0;
+#X connect 39 0 36 0;
+#X connect 40 0 35 0;
+#X connect 40 1 37 1;
+#X connect 49 0 11 0;
+#X connect 51 0 21 0;

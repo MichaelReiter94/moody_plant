@@ -1,0 +1,62 @@
+#N canvas 0 50 1366 685 10;
+#X obj 307 402 cnv 45 350 110 empty empty empty 20 12 0 14 -258113
+-66577 0;
+#X obj 445 190 bpm;
+#X obj 385 221 metro 600;
+#X floatatom 532 176 5 0 0 0 - - -, f 5;
+#X obj 385 166 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 385 271 loop 4;
+#X floatatom 385 301 5 0 0 0 - - -, f 5;
+#X obj 385 189 t f b;
+#X obj 465 256 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 385 351 taktzahl;
+#X floatatom 438 378 5 0 0 0 - - -, f 5;
+#X floatatom 385 378 5 0 0 0 - - -, f 5;
+#X obj 447 474 outlet;
+#X text 504 474 Anzahl an gespielten Takten;
+#X obj 921 336 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 336 419 outlet;
+#X text 399 421 click (die zahl im großen kasterl);
+#X obj 346 80 cnv 45 700 50 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#X obj 532 98 inlet;
+#X text 527 84 b.p.m.;
+#X obj 685 101 inlet;
+#X floatatom 685 141 5 0 0 0 - - -, f 5;
+#X obj 685 160 t b f;
+#X text 638 83 inlet für die Taktart (3tel/4tel);
+#X obj 385 102 inlet;
+#X obj 411 450 outlet;
+#X text 469 449 takt 1 - 4 (Taktfolge);
+#X text 367 82 Toggle on/off;
+#X obj 921 90 inlet;
+#X text 894 107 loop reseten;
+#X obj 532 145 f \$1;
+#X obj 588 129 loadbang;
+#X connect 1 0 2 1;
+#X connect 2 0 5 0;
+#X connect 3 0 1 0;
+#X connect 4 0 7 0;
+#X connect 5 0 6 0;
+#X connect 6 0 15 0;
+#X connect 6 0 9 0;
+#X connect 7 0 2 0;
+#X connect 7 1 8 0;
+#X connect 8 0 5 2;
+#X connect 9 0 11 0;
+#X connect 9 1 10 0;
+#X connect 10 0 25 0;
+#X connect 11 0 12 0;
+#X connect 14 0 9 1;
+#X connect 18 0 30 0;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 22 0 8 0;
+#X connect 22 1 5 1;
+#X connect 24 0 4 0;
+#X connect 28 0 14 0;
+#X connect 30 0 3 0;
+#X connect 31 0 30 0;

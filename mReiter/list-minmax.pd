@@ -1,0 +1,48 @@
+#N canvas -8 -8 1366 685 10;
+#X text 85 61 größte und kleinste Zahl einer Liste bestimmen;
+#X obj 354 553 cnv 40 180 40 empty empty empty 20 12 0 14 -258113 -66577
+0;
+#X obj 507 106 cnv 40 120 40 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#X obj 367 366 list split 1;
+#X obj 431 295 route bang;
+#X obj 367 312 list;
+#X obj 367 202 until;
+#X msg 367 174 100;
+#X obj 367 500 min;
+#X obj 411 420 max;
+#X floatatom 411 447 5 0 0 0 - - -, f 5;
+#X floatatom 367 527 5 0 0 0 - - -, f 5;
+#X obj 583 402 list split 1;
+#X obj 537 157 t b l l;
+#X obj 442 419 f;
+#X obj 403 500 f;
+#X obj 471 563 outlet;
+#X obj 367 562 outlet;
+#X obj 537 119 inlet, f 7;
+#X text 640 107 inlet: eine Liste aus Zahlen (auch floats zB 16.5 \,
+nicht 16 \, 5 da ein \, eine neue Liste erstellt);
+#X text 555 548 outlets: links: kleinste Zahl der Liste rechts: größte
+Zahl der Liste;
+#X connect 3 0 9 0;
+#X connect 3 0 8 0;
+#X connect 3 1 4 0;
+#X connect 4 0 6 1;
+#X connect 4 1 5 1;
+#X connect 5 0 3 0;
+#X connect 6 0 5 0;
+#X connect 7 0 6 0;
+#X connect 8 0 11 0;
+#X connect 8 0 15 0;
+#X connect 9 0 10 0;
+#X connect 9 0 14 0;
+#X connect 10 0 16 0;
+#X connect 11 0 17 0;
+#X connect 12 0 8 1;
+#X connect 12 0 14 0;
+#X connect 13 0 7 0;
+#X connect 13 1 5 1;
+#X connect 13 2 12 0;
+#X connect 14 0 9 1;
+#X connect 15 0 8 1;
+#X connect 18 0 13 0;

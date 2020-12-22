@@ -1,0 +1,91 @@
+#N canvas 0 0 1252 613 10;
+#X obj 773 -177 strcmp;
+#X msg 902 -313 one;
+#X obj 764 -205 list;
+#X floatatom 773 -152 5 0 0 0 - - -, f 5;
+#X obj 831 -234 symbol;
+#X obj 682 -242 counter;
+#X obj 699 -349 t b b;
+#X obj 721 -276 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 727 -378 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 680 -193 5 0 0 0 - - -, f 5;
+#X obj 619 -468 list-len;
+#X floatatom 619 -443 5 0 0 0 - - -, f 5;
+#X obj 682 -217 + 1;
+#X obj 585 -421 gr=bng;
+#X msg 585 -396 0;
+#X obj 756 -439 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 889 -580 inlet;
+#X obj 840 -581 inlet;
+#X obj 858 -43 outlet;
+#X obj 772 -113 ==bng 0;
+#X obj 772 -88 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 756 -461 1;
+#X obj 806 -500 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 608 -146 zl nth 0;
+#X symbolatom 831 -209 10 0 0 0 - - -, f 10;
+#X msg 347 -363 set \$1;
+#X msg 351 -291 empty__newOne__createFile;
+#X obj 347 -388 l2s __;
+#X obj 316 -210 s2l __;
+#X obj 330 -253 symbol;
+#X obj 441 -201 list;
+#X text 193 -540 left inlet is string you want to compare (active inlet)
+;
+#X text 188 -506 right inlet: list or message with strings to compare
+;
+#X obj 722 -404 metro;
+#X msg 899 -93 0;
+#X msg 769 -64 1;
+#X obj 797 -474 t b b b;
+#X text 772 -14 if the given symbol (1 string or first element of list)
+is contained in the list the output becomes 1 otherwise it is 0;
+#X obj 960 -137 outlet;
+#X text 1002 -112 outlet 2 lets you know if its done comparing with
+a bang;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 2 0 0 0;
+#X connect 3 0 19 0;
+#X connect 4 0 0 1;
+#X connect 4 0 24 0;
+#X connect 5 0 12 0;
+#X connect 6 0 26 0;
+#X connect 6 1 5 0;
+#X connect 7 0 5 2;
+#X connect 8 0 6 0;
+#X connect 9 0 13 0;
+#X connect 9 0 23 1;
+#X connect 10 0 11 0;
+#X connect 11 0 13 1;
+#X connect 12 0 9 0;
+#X connect 13 0 14 0;
+#X connect 13 0 38 0;
+#X connect 14 0 15 0;
+#X connect 15 0 33 0;
+#X connect 16 0 10 0;
+#X connect 16 0 27 0;
+#X connect 17 0 4 0;
+#X connect 17 0 22 0;
+#X connect 19 0 20 0;
+#X connect 20 0 35 0;
+#X connect 21 0 15 0;
+#X connect 22 0 36 0;
+#X connect 23 0 2 0;
+#X connect 25 0 26 0;
+#X connect 26 0 29 0;
+#X connect 27 0 25 0;
+#X connect 28 0 30 0;
+#X connect 29 0 28 0;
+#X connect 30 0 23 0;
+#X connect 33 0 8 0;
+#X connect 34 0 18 0;
+#X connect 35 0 18 0;
+#X connect 36 0 21 0;
+#X connect 36 1 7 0;
+#X connect 36 2 34 0;

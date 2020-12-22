@@ -1,0 +1,172 @@
+#N canvas 0 0 1888 970 10;
+#X obj 571 150 cnv 30 393 190 empty empty empty 20 12 0 14 -135105
+-66577 0;
+#X msg 1202 552 -1;
+#X text 1234 552 clear whole text;
+#X obj 1376 462 openpanel;
+#X msg 1053 616 read \$1;
+#X symbolatom 1134 617 96 0 0 0 - - -, f 96;
+#X obj 1376 433 bng 22 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1053 339 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X symbolatom 1053 397 49 0 0 0 - - -, f 49;
+#X obj 1053 426 list append;
+#X obj 1053 451 l2s /;
+#X obj 1053 372 getdir 1;
+#X obj 1089 322 t b s;
+#X obj 1367 390 cnv 30 421 38 empty empty empty 20 12 0 14 -135105
+-66577 0;
+#X obj 1376 395 inlet;
+#X text 1422 400 inlet 3: bang opens the directory to load file from
+there;
+#X obj 1052 734 text define -k \$0-temp;
+#A set name metaData \; bpm 0 \; timePlayed 0 \; placeHolder \; placeHolder
+\; placeHolder \; placeHolder \; name batCountry_arpeggio.gp5 \; bpm
+50 \; timePlayed 79 \; placeHolder \; placeHolder \; placeHolder \;
+placeHolder \; name anastasiaSlash.gp5 \; bpm 71 \; timePlayed 131
+\; placeHolder \; placeHolder \; placeHolder \; placeHolder \; name
+theCrusadeTrivium.gp5 \; bpm 83 \; timePlayed 1205 \; placeHolder \;
+placeHolder \; placeHolder \; placeHolder \; name thunderstruckACDC_hammerOns.tg
+\; bpm 70 \; timePlayed 225 \; placeHolder \; placeHolder \; placeHolder
+\; placeHolder \; name snow_RHCP.gp5 \; timePlayed 135 \; timePlayed
+0 \; placeHolder \; placeHolder \; placeHolder \; placeHolder \; name
+constantMotionDreamTheater.gp5 \; bpm 50 \; timePlayed 147 \; placeHolder
+\; placeHolder \; placeHolder \; placeHolder \; name major.tg \; bpm
+139 \; timePlayed 2972 \; imageName major.jpg \; placeHolder \; placeHolder
+\; placeHolder \; name locrian.tg \; bpm 110 \; timePlayed 610 \; imageName
+locrian.jpg \; placeHolder \; placeHolder \; placeHolder \; name dorian.tg
+\; bpm 120 \; timePlayed 766 \; imageName dorian.jpg \; placeHolder
+\; placeHolder \; placeHolder \; name minor.tg \; bpm 123 \; timePlayed
+450 \; imageName minor.jpg \; placeHolder \; placeHolder \; placeHolder
+\;;
+#X obj 1202 584 text delete \$0-temp;
+#X floatatom 683 633 5 0 0 0 - - -, f 5;
+#X obj 683 542 text get \$0-temp;
+#X obj 683 607 list length;
+#X obj 796 542 text size \$0-temp;
+#X obj 796 460 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 128 31 cnv 30 375 82 empty empty empty 20 12 0 14 -4096 -66577
+0;
+#X text 134 94 but with a blank space separating it from the line itself
+;
+#X obj 560 705 cnv 30 294 37 empty empty empty 20 12 0 14 -258049 -66577
+0;
+#X obj 579 714 outlet;
+#X obj 683 714 outlet;
+#X obj 796 714 outlet;
+#X text 433 754 outlet 1: list of the defined line of the text;
+#X text 532 788 outlet 2: number of elements in the line that is output
+in outlet 1;
+#X text 733 756 outlet 3: number of lines of the text;
+#X obj 522 471 cnv 30 194 46 empty empty empty 20 12 0 14 -135105 -66577
+0;
+#X obj 1053 535 t s b;
+#X obj 1088 217 route local global;
+#X obj 1193 244 print needs to define if "global" or "local";
+#X obj 1202 521 loadbang;
+#X obj 1231 175 route init;
+#X obj 1231 155 list trim;
+#X obj 1222 29 cnv 30 406 85 empty empty empty 20 12 0 14 -135105 -66577
+0;
+#X obj 1231 37 loadbang;
+#X obj 1231 130 s2l *;
+#X text 1306 58 if the prepended "init*" is missing it will not work
+;
+#X text 1305 79 subfolders are possible though: "init*subfolder/filename.txt"
+, f 52;
+#X obj 306 528 text set \$0-temp;
+#X msg 1101 691 write \$1;
+#X obj 1101 661 symbol;
+#X obj 997 639 bng 22 250 50 0 empty empty save 0 24 0 10 -4033 -1
+-1;
+#X text 631 195 - "readLine" + float (which line should be output)
+;
+#X text 631 220 - "replace" + list (replacces the old line);
+#X text 631 242 - "load" + "local" or "global" + directory (from local
+folder or global path);
+#X obj 358 150 cnv 30 217 76 empty empty empty 20 12 0 14 -135105 -66577
+0;
+#X obj 372 163 inlet;
+#X text 134 36 each line in the text file must be terminated with a
+semicolon \; ;
+#X text 631 277 - save (overwrite loaded file with current state);
+#X obj 615 368 print no precursor/flag matched a route option;
+#X obj 419 306 list;
+#X text 418 159 the inlet needs a list with one of these "flags" as
+precursor:;
+#X text 533 476 creation argument 2:;
+#X text 534 498 read line number \$2;
+#X obj 385 480 i \$2;
+#X text 1306 39 initialization argument 1: "init*filename.txt";
+#X obj 1231 61 symbol \$1;
+#X obj 372 200 route readLine replace load save newEntry;
+#X msg 337 480 1e+006;
+#X obj 254 480 t l b;
+#X obj 254 217 list;
+#X text 194 217 new entry;
+#X text 631 299 - newEntry (writes a line in the end of the document)
+;
+#X obj 893 445 loadbang;
+#X obj 893 470 del 200;
+#X floatatom 372 388 5 0 0 0 - - -, f 5;
+#X obj 683 567 t l l l;
+#X obj 664 404 t f f b;
+#X obj 419 331 t l b;
+#X connect 1 0 17 0;
+#X connect 3 0 33 0;
+#X connect 4 0 16 0;
+#X connect 5 0 46 1;
+#X connect 6 0 3 0;
+#X connect 7 0 11 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 33 0;
+#X connect 11 0 8 0;
+#X connect 12 0 7 0;
+#X connect 12 1 9 1;
+#X connect 14 0 6 0;
+#X connect 18 0 27 0;
+#X connect 19 0 72 0;
+#X connect 20 0 18 0;
+#X connect 21 0 28 0;
+#X connect 22 0 21 0;
+#X connect 33 0 4 0;
+#X connect 33 0 5 0;
+#X connect 33 1 1 0;
+#X connect 34 0 12 0;
+#X connect 34 1 33 0;
+#X connect 34 2 35 0;
+#X connect 36 0 1 0;
+#X connect 37 0 12 0;
+#X connect 38 0 37 0;
+#X connect 40 0 62 0;
+#X connect 41 0 38 0;
+#X connect 45 0 16 0;
+#X connect 46 0 45 0;
+#X connect 47 0 46 0;
+#X connect 52 0 63 0;
+#X connect 56 0 74 0;
+#X connect 60 0 44 1;
+#X connect 62 0 41 0;
+#X connect 63 0 71 0;
+#X connect 63 1 56 0;
+#X connect 63 2 34 0;
+#X connect 63 3 47 0;
+#X connect 63 4 66 0;
+#X connect 63 5 55 0;
+#X connect 64 0 44 1;
+#X connect 65 0 44 0;
+#X connect 65 1 64 0;
+#X connect 66 0 65 0;
+#X connect 69 0 70 0;
+#X connect 70 0 21 0;
+#X connect 71 0 73 0;
+#X connect 72 1 26 0;
+#X connect 72 2 20 0;
+#X connect 73 0 60 1;
+#X connect 73 1 19 0;
+#X connect 73 2 22 0;
+#X connect 74 0 44 0;
+#X connect 74 1 60 0;

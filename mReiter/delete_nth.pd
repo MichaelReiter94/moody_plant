@@ -1,0 +1,57 @@
+#N canvas 0 0 1349 665 10;
+#X obj 579 140 cnv 44 231 84 empty empty empty 20 12 0 14 -4033 -66577
+0;
+#X msg 319 134 one two three four;
+#X floatatom 563 364 5 0 0 0 - - -, f 5;
+#X obj 471 338 list;
+#X obj 536 320 t b f;
+#X floatatom 387 360 5 0 0 0 - - -, f 5;
+#X obj 298 354 list;
+#X obj 360 335 t b f;
+#X obj 360 313 - 1;
+#X obj 298 416 list append;
+#X obj 536 239 t f f;
+#X obj 593 221 i \$1;
+#X obj 593 170 inlet;
+#X obj 593 195 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 665 144 inlet;
+#X obj 762 204 inlet;
+#X obj 319 161 list;
+#X obj 292 436 cnv 44 60 46 empty empty empty 20 12 0 14 -258049 -66577
+0;
+#X obj 298 444 outlet;
+#X text 820 178 middle inlet: define list from which the element should
+be removed from (cold inlet);
+#X text 820 225 left inlet: take action (remove the specified element)
+;
+#X text 891 385 creation argument = right inlet (nth number);
+#X text 815 132 right inlet:  define the number (nth number) that
+should be deleted from the list (cold inlet);
+#X obj 298 376 list split 0;
+#X obj 471 380 list split 0;
+#X text 889 407 if no number is given \, not element should be deleted
+;
+#X text 211 487 outlet: list without the deleted item;
+#X connect 1 0 16 0;
+#X connect 2 0 24 1;
+#X connect 3 0 24 0;
+#X connect 4 0 3 0;
+#X connect 4 1 2 0;
+#X connect 5 0 23 1;
+#X connect 6 0 23 0;
+#X connect 7 0 6 0;
+#X connect 7 1 5 0;
+#X connect 8 0 7 0;
+#X connect 9 0 18 0;
+#X connect 10 0 8 0;
+#X connect 10 1 4 0;
+#X connect 11 0 10 0;
+#X connect 12 0 13 0;
+#X connect 13 0 11 0;
+#X connect 14 0 16 0;
+#X connect 15 0 11 1;
+#X connect 16 0 6 1;
+#X connect 16 0 3 1;
+#X connect 23 0 9 0;
+#X connect 24 1 9 1;

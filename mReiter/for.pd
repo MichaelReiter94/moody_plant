@@ -1,0 +1,46 @@
+#N canvas -8 -8 1366 685 10;
+#X obj 560 373 cnv 40 500 80 empty empty empty 20 12 0 14 -258113 -66577
+0;
+#X obj 521 19 cnv 40 600 70 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#X floatatom 707 196 5 0 0 0 - - -, f 5;
+#X obj 707 263 counter, f 14;
+#X obj 707 218 until 1;
+#X obj 789 179 int;
+#X obj 708 138 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 807 146 5 0 0 0 - - -, f 5;
+#X obj 807 44 inlet;
+#X obj 807 116 f \$1;
+#X obj 708 42 inlet;
+#X obj 931 99 loadbang;
+#X obj 708 162 t b b b;
+#X obj 738 332 +;
+#X floatatom 738 356 5 0 0 0 - - -, f 5;
+#X obj 738 377 outlet;
+#X obj 707 353 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 707 290 t b f;
+#X obj 707 400 outlet;
+#X text 521 63 inlet 1: bang zum starten der for schleife;
+#X text 763 22 inlet 2 = creation argument anzahl der schleifen;
+#X text 790 376 Nummer der schleife (startet bei 0);
+#X text 566 422 bang bei jedem schleifendurchlauf \, wird nach der
+Zahl ausgegeben;
+#X connect 2 0 4 0;
+#X connect 3 0 17 0;
+#X connect 4 0 3 0;
+#X connect 5 0 2 0;
+#X connect 6 0 12 0;
+#X connect 7 0 5 1;
+#X connect 8 0 9 0;
+#X connect 9 0 7 0;
+#X connect 10 0 6 0;
+#X connect 11 0 9 0;
+#X connect 12 1 5 0;
+#X connect 12 2 3 2;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 16 0 18 0;
+#X connect 17 0 16 0;
+#X connect 17 1 13 0;

@@ -1,0 +1,98 @@
+#N canvas 0 0 1362 685 10;
+#X obj 106 114 vsl 18 110 0.01 1 0 0 gain empty Volume -3 -7 1 8 -1
+-4034 -33289 0 1;
+#X floatatom -417 441 5 0 0 0 - - -;
+#X msg -417 511 \$1 \$2;
+#X msg -417 374 0.2;
+#X floatatom -378 441 5 0 0 0 - - -;
+#X obj -417 466 bondo 2;
+#X obj -417 486 pack f f;
+#X obj -417 321 loadbang;
+#X msg -378 377 50;
+#X floatatom -332 405 5 0 0 0 - - -;
+#X obj 142 423 osc~ 440;
+#X obj 140 493 dac~;
+#X obj 141 456 *~;
+#X obj -417 534 line~;
+#X obj 210 227 spigot;
+#X obj 274 224 spigot;
+#X obj 243 39 tgl 15 0 empty mute empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X obj 301 204 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+-1;
+#X obj 301 181 - 1;
+#X floatatom 210 254 5 0 0 0 - - -;
+#X obj 274 156 t f f;
+#X obj 220 97 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj -250 199 spigot;
+#X floatatom -195 120 5 0 0 0 - - -;
+#X obj -195 142 == 0;
+#X floatatom -195 165 5 0 0 0 - - -;
+#X obj -538 424 r volume;
+#X obj 210 275 s volume;
+#X obj 106 231 tgl 18 0 mute empty On/Off -1 23 1 8 -66577 -4034 -13381
+1 1;
+#X obj -195 99 tgl 15 0 empty mute empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 311 79 Eingänge mit toggle öffnen/schließen \, also umschalten
+zwischen durchgang mit volum und einem "0" Durchgang = mute;
+#X floatatom -250 120 5 0 0 0 - - -;
+#X obj 173 189 r gain;
+#X obj -250 99 r gain;
+#X obj -250 143 change;
+#X msg -250 164 0;
+#X obj -129 216 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text -416 18 r gain kommt vom vslider der Lautstärke... change
+"bangt" nur wenn der slider bewegt wird und spigot lässt nur dann
+einen band durch wenn die mute Taste eingeschaltet ist ==> wird der
+slider im mute modus bewegt \, wird wieder auf laut geschalten!;
+#X text -526 565 diese Funktion "rampt"die Werte die vom Gain Regler/Volume
+kommen langsam auf/ab um kein Knistern zu erzeugen!;
+#X floatatom 142 399 5 0 0 0 - - -;
+#X obj -77 550 outlet~;
+#X text 107 513 Kontroll Oscilator;
+#X text 157 444 hierhin zum testen: line~ Ausgang;
+#X obj -5 124 loadbang;
+#X msg -5 147 1;
+#X connect 1 0 5 0;
+#X connect 2 0 13 0;
+#X connect 3 0 1 0;
+#X connect 4 0 5 1;
+#X connect 5 0 6 0;
+#X connect 5 1 6 1;
+#X connect 6 0 2 0;
+#X connect 7 0 3 0;
+#X connect 7 0 8 0;
+#X connect 8 0 4 0;
+#X connect 9 0 4 0;
+#X connect 10 0 12 0;
+#X connect 13 0 40 0;
+#X connect 14 0 19 0;
+#X connect 15 0 19 0;
+#X connect 16 0 14 1;
+#X connect 16 0 20 0;
+#X connect 16 0 21 0;
+#X connect 17 0 15 1;
+#X connect 18 0 17 0;
+#X connect 19 0 27 0;
+#X connect 20 0 15 0;
+#X connect 20 1 18 0;
+#X connect 21 0 0 0;
+#X connect 22 0 36 0;
+#X connect 23 0 24 0;
+#X connect 24 0 25 0;
+#X connect 25 0 22 1;
+#X connect 26 0 1 0;
+#X connect 29 0 23 0;
+#X connect 31 0 34 0;
+#X connect 32 0 14 0;
+#X connect 33 0 31 0;
+#X connect 34 0 35 0;
+#X connect 35 0 22 0;
+#X connect 36 0 28 0;
+#X connect 39 0 10 0;
+#X connect 43 0 44 0;
+#X connect 44 0 28 0;
+#X coords 0 -1 1 1 30 160 2 100 100;

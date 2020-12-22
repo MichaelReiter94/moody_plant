@@ -1,0 +1,9 @@
+#N canvas 683 0 667 669 10;
+#N canvas 0 0 667 669 adsr 1;
+#X obj 295 117 receive freq;
+#X obj 339 176 print \$0 freq;
+#X connect 0 0 1 0;
+#X restore 953 257 pd adsr;
+#X obj 597 217 send freq;
+#X floatatom 582 122 5 0 0 0 - - -, f 5;
+#X connect 2 0 1 0;

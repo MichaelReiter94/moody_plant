@@ -1,0 +1,38 @@
+#N canvas -8 -8 1366 685 10;
+#X obj 725 -36 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 764 78 spigot;
+#X obj 809 60 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 809 36 0;
+#X msg 846 35 1;
+#X obj 725 -11 t b b b;
+#X obj 764 113 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 724 -212 adc~;
+#X obj 725 -176 env~;
+#X floatatom 725 -145 5 0 0 0 - - -, f 5;
+#X floatatom 758 -120 5 0 0 0 - - -, f 5;
+#X msg 758 -256 75;
+#X obj 758 -277 loadbang;
+#X obj 846 7 timeOffset 80;
+#X obj 764 145 outlet;
+#X obj 725 -88 gr.bng;
+#X connect 0 0 5 0;
+#X connect 1 0 6 0;
+#X connect 2 0 1 1;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 1 3 0;
+#X connect 5 2 1 0;
+#X connect 6 0 13 0;
+#X connect 6 0 14 0;
+#X connect 7 0 8 0;
+#X connect 7 1 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 15 0;
+#X connect 10 0 15 1;
+#X connect 11 0 10 0;
+#X connect 12 0 11 0;
+#X connect 13 0 4 0;
+#X connect 15 0 0 0;

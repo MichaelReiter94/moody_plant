@@ -1,0 +1,102 @@
+#N canvas 0 0 1252 613 10;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array soundfile 1.03764e+007 float 0 black black;
+#X coords 0 1 1.03764e+007 -1 324 218 1;
+#X restore 1094 141 graph;
+#X obj 726 10 cnv 15 194 52 empty empty empty 20 12 0 14 -135137 -66577
+0;
+#X obj 65 440 cnv 15 123 37 empty empty empty 20 12 0 14 -258049 -66577
+0;
+#X obj 111 86 openpanel;
+#X symbolatom 111 110 89 0 0 0 - - -, f 89;
+#X obj 111 64 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 111 176 soundfiler;
+#X floatatom 111 210 13 0 0 0 - - -, f 13;
+#X obj 96 348 list;
+#X obj 146 283 / 44100;
+#X floatatom 146 332 7 0 0 0 - - -, f 7;
+#X obj 96 266 t f f;
+#X obj 96 397 line~;
+#X obj 61 226 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 146 308 * 1000;
+#X msg 96 370 0 \, \$1 \$2;
+#X obj 793 70 route load play;
+#X msg 784 39 load;
+#X msg 820 39 play;
+#X obj 96 241 i;
+#X obj 96 421 tabread~ soundfile;
+#X text 534 134 path to the loaded soundfile;
+#X text 205 210 number of samples;
+#X text 208 328 number of miliseconds calculated with a sampling rate
+of 44100;
+#X obj 96 446 outlet~;
+#X obj 804 13 inlet;
+#X obj 830 119 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 785 119 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 362 223 del;
+#X obj 362 247 bng 20 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 362 272 spigot;
+#X obj 881 41 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 881 12 inlet;
+#X text 904 41 enable loop;
+#X floatatom 923 406 5 0 0 0 - - -, f 5;
+#X obj 923 434 * 60;
+#X obj 923 459 *;
+#X msg 962 442 44100;
+#X floatatom 923 531 20 0 0 0 - - -, f 20;
+#X floatatom 1018 427 5 0 0 0 - - -, f 5;
+#X obj 1018 468 *;
+#X msg 1057 451 44100;
+#X obj 923 485 bondo;
+#X obj 923 508 +;
+#X text 964 404 minuten;
+#X text 1057 428 sekunden;
+#X text 1054 530 samples;
+#X msg 111 147 read -maxsize 1.6e+007 -resize \$1 soundfile;
+#X msg 762 325 \; soundfile normalize 1;
+#X connect 3 0 4 0;
+#X connect 4 0 47 0;
+#X connect 5 0 3 0;
+#X connect 6 0 7 0;
+#X connect 7 0 19 1;
+#X connect 8 0 15 0;
+#X connect 9 0 14 0;
+#X connect 10 0 8 1;
+#X connect 10 0 28 0;
+#X connect 11 0 8 0;
+#X connect 11 1 9 0;
+#X connect 12 0 20 0;
+#X connect 13 0 19 0;
+#X connect 14 0 10 0;
+#X connect 15 0 12 0;
+#X connect 16 0 3 0;
+#X connect 16 0 27 0;
+#X connect 16 1 19 0;
+#X connect 16 1 26 0;
+#X connect 17 0 16 0;
+#X connect 18 0 16 0;
+#X connect 19 0 11 0;
+#X connect 20 0 24 0;
+#X connect 25 0 16 0;
+#X connect 28 0 29 0;
+#X connect 29 0 30 0;
+#X connect 30 0 19 0;
+#X connect 31 0 30 1;
+#X connect 32 0 31 0;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
+#X connect 36 0 42 0;
+#X connect 37 0 36 1;
+#X connect 39 0 40 0;
+#X connect 40 0 42 1;
+#X connect 41 0 40 1;
+#X connect 42 0 43 0;
+#X connect 42 1 43 1;
+#X connect 43 0 38 0;
+#X connect 47 0 6 0;
