@@ -6,19 +6,19 @@ __________________________________________allgemein_____________________________
 
 - [] add light sensor
 - [] add humidity sensor
+- [] checken ob sich am signal etwas ändert beim laptop wenn man in an die stromversorgung hängt!
+
+_____________________________________________Pd______________________________________________
+
+- [] save last calibration (and set bounds for sliders/oszi)
 
 
-_____________________________________________GUI____________________________________________
 
 
-
-
-
-
-______________________________________audio processing______________________________________
+___________________________________________arduino__________________________________________
 
 
 - [X] use capacitance measurements instead (needs output AC voltage source from arduino)
-
+- []  dont use sin() as argument for creating square wve (you only need to update squarewave when it changes, not every sample)
 
 ___________________________________________Bonus____________________________________________
