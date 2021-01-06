@@ -1,7 +1,7 @@
-#N canvas -1928 4 1904 986 10;
+#N canvas 0 0 1888 970 10;
 #X obj 828 519 list tosymbol;
 #X obj 828 762 fromsymbol;
-#X floatatom 828 787 27 0 0 0 - - -, f 27;
+#X floatatom 813 848 27 0 0 0 - - -, f 27;
 #X obj 828 706 l2s;
 #X symbolatom 828 737 121 0 0 0 - - -, f 121;
 #X symbolatom 843 683 10 0 0 0 - - -, f 10;
@@ -11,42 +11,49 @@
 #X obj 828 436 moses 58;
 #X obj 783 413 moses 48;
 #X obj 783 388 spigot;
-#X obj 853 361 tgl 27 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 853 361 tgl 27 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 783 120 inlet;
-#X obj 992 209 moses 58;
-#X obj 947 186 moses 48;
-#X obj 947 236 route 10 13;
-#X floatatom 947 162 5 0 0 0 - - -, f 5;
-#X text 1266 255 identifier = 'A' = 65 in ASCII;
-#X obj 1010 296 route 1;
-#X obj 1010 321 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1152 209 moses 58;
+#X obj 1107 186 moses 48;
+#X obj 1107 236 route 10 13;
+#X floatatom 1107 162 5 0 0 0 - - -, f 5;
+#X text 1416 255 identifier = 'A' = 65 in ASCII;
+#X obj 1170 296 route 1;
+#X obj 1170 321 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 1049 322 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1209 322 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X msg 1049 344 0;
-#X msg 1010 344 1;
+#X msg 1209 344 0;
+#X msg 1170 344 1;
 #X obj 783 145 t f f;
-#X obj 947 261 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 1107 289 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 948 589 bng 15 250 50 0 empty empty clear 17 7 0 10 -262144
--1 -1;
-#X obj 828 811 outlet;
-#X obj 1220 254 inlet;
-#X obj 1010 271 == \$1;
+#X obj 1107 497 bng 51 250 50 0 empty empty push\ value\ and\ clear
+65 7 0 10 -262144 -1 -1;
+#X obj 813 872 outlet;
+#X obj 1380 254 inlet;
+#X obj 1170 271 == \$1;
 #X obj 828 604 list store;
 #X obj 828 543 t b s;
-#X obj 167 536 list cat;
-#X msg 280 603 clear;
+#X obj 67 536 list cat;
+#X msg 180 603 clear;
 #X msg 854 576 append \$1;
-#X obj 167 674 l2s;
-#X symbolatom 167 705 29 0 0 0 - - -, f 29;
-#X symbolatom 182 650 10 0 0 0 - - -, f 10;
-#X msg 182 628 symbol;
-#X obj 182 606 loadbang;
+#X obj 67 674 l2s;
+#X symbolatom 67 705 29 0 0 0 - - -, f 29;
+#X symbolatom 82 650 10 0 0 0 - - -, f 10;
+#X msg 82 628 symbol;
+#X obj 82 606 loadbang;
+#X obj 1107 587 t b b;
+#X obj 813 809 f;
+#X obj 1107 794 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 183 574 replaced by list store;
+#X text 184 543 list cat part removed for pure data vanilla compatibility
+;
 #X connect 0 0 31 0;
 #X connect 0 0 32 0;
-#X connect 1 0 2 0;
+#X connect 1 0 41 1;
 #X connect 2 0 27 0;
 #X connect 3 0 4 0;
 #X connect 4 0 1 0;
@@ -63,7 +70,6 @@
 #X connect 15 0 16 0;
 #X connect 15 1 14 0;
 #X connect 16 0 25 0;
-#X connect 16 1 25 0;
 #X connect 16 2 29 0;
 #X connect 17 0 15 0;
 #X connect 19 0 20 0;
@@ -75,8 +81,7 @@
 #X connect 24 0 11 0;
 #X connect 24 1 17 0;
 #X connect 25 0 26 0;
-#X connect 26 0 30 1;
-#X connect 26 0 33 0;
+#X connect 26 0 40 0;
 #X connect 28 0 29 1;
 #X connect 29 0 19 0;
 #X connect 30 0 3 0;
@@ -89,3 +94,8 @@
 #X connect 37 0 35 1;
 #X connect 38 0 37 0;
 #X connect 39 0 38 0;
+#X connect 40 0 42 0;
+#X connect 40 1 30 1;
+#X connect 40 1 33 0;
+#X connect 41 0 2 0;
+#X connect 42 0 41 0;

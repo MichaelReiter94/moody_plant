@@ -1,0 +1,6 @@
+{
+    "board": "SparkFun:avr:promicro",
+    "port": "COM5",
+    "sketch": "sinusGenerator.ino",
+    "configuration": "cpu=16MHzatmega32U4"
+}

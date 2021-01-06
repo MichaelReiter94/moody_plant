@@ -1,5 +1,7 @@
 Moody Plant
 
+Die Mozzi Dateien wurden überarbeitet weil sie in einer anderen IDE nicht funktioniert haben... es sollten aber auch mit den normalen mozzi files alles gut gehen.
+Die TrueRMS library muss allerdings eingebunden werden!
 
 
 Der code wurde ursprünglich mit "PURR data" (=neues Pd extended) z erstellt. 
