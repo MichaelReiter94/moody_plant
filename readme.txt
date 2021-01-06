@@ -11,15 +11,24 @@ Ich habe ihn angepasst, dass er auch auch mit vanilla funktionieren sollte, aber
 alternativ Purr data downloaden:     https://github.com/agraef/purr-data/releases
 
 
-
-der arduino code ist zum einlesen des ersten analog inputs und zum weiterleiten über den serial output.
+Bedienung Pd GUI:
 
 zum starten des programms, muss 'main.pd' geöffnet werden. der richtige port muss ausgewählt werden (muss gegebenenfalls geändert werden, standard ist port 5 weil ich dort meinen arduino anstecke). Den richtigen port kann man am besten über die arduino IDE finden(?).
 
-ein kleiner bug ist, dass man zuerst die arduino IDE öffnen muss und den serial monitor (Tools-->serial monitor) öffnen muss (hier sollten im 10ms takt werte ausgegeben werden)
+ein kleiner bug ist, dass man zuerst die arduino IDE öffnen muss und den serial monitor (Tools-->serial monitor) öffnen muss (hier sollten regelmäßig werte (0-1024) mit prefix (zB "A") ausgegeben werden)
 
 wenn diese werte ausgegeben werden, kann der serial monitor geschlossen werden und in Pd der port geöffnet werden ('open port' klicken).
 
 
 
-der input pin für das signal von der pflanze ist pin A0 (es gibt auch einen output pin (A1) mit dem LEDs angesteuert werden können wenn die pflanze "spricht").
+der input pin für das signal von der pflanze ist pin A0 der 
+der output pin für das 100Hz Signal ist pin 3 (nicht analog 3)
+
+die schaltung sieht folgendermaßen aus:
+
+                                         ________[analog input 0]	
+[pin3]_______[10megaOhm Widerstand]_____|
+                                        |________[Erde Blumentopf = kapazität]
+
+
+(es gibt auch die möglichkeit in Pd um über einen output pin LEDs anzusteuern wenn die pflanze "spricht").
