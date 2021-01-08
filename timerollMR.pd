@@ -1,0 +1,101 @@
+#N canvas 286 162 1316 645 10;
+#X obj 272 347 list;
+#X obj 271 393 list trim;
+#X obj 272 14 inlet;
+#X text 314 14 data;
+#X obj 271 369 list prepend 0;
+#X obj 294 316 list split 100;
+#X obj 272 283 resampleMR 50, f 39;
+#X floatatom 272 67 5 0 0 0 - - -, f 5;
+#X floatatom 461 66 5 0 0 0 - - -, f 5;
+#X floatatom 650 86 5 0 0 0 - - -, f 5;
+#X obj 650 110 moses 10;
+#X obj 695 130 t f f;
+#X obj 272 45 route float setSamplingIntervall setArraySize setUpperBound
+setLowerBound, f 158;
+#X msg 1119 308 \; \$0-timeroll bounds 0 \$1 2 \$2;
+#X obj 1028 256 pack f f;
+#X msg 1154 179 0;
+#X obj 1127 139 loadbang;
+#X obj 1127 158 t b b;
+#X msg 1127 179 1;
+#X obj 1028 196 f;
+#X obj 1073 196 f;
+#X obj 839 129 t b f;
+#X obj 1028 107 t b f;
+#X obj 1028 146 t b b, f 8;
+#X msg 867 328 \; \$0-timeroll ylabel -0.5 \$1 \$2;
+#X msg 640 158 loadbang;
+#X msg 640 183 100;
+#X obj 1217 73 print notAValidInput:;
+#X obj 272 238 clip 0 1;
+#X obj 1028 221 t f f;
+#X obj 1073 221 t f f;
+#X floatatom 695 300 5 0 0 0 - - -, f 5;
+#X obj 271 474 s \$0-timeroll;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$0-timeroll 100 float 3 black black;
+#A 0 412.8 413 411.2 411.4 410.2 410.4 410.2 410 412 411.6 412 412.4
+412 411.6 410.6 411.6 412.2 411.8 411.8 410.2 411 410.8 410.4 411.8
+411.2 412.4 411.8 411.2 411.6 410.4 411.8 412.2 412.2 412.2 411.8 413.4
+413.8 414 413 411.8 412.2 412 413.2 413.8 411.2 411.8 410.4 411.2 411.8
+411.6 413.2 411.6 411 409.4 409.6 412.2 411.6 414 412.8 412.4 411.8
+412.4 413 412.8 412 413 411.8 413 411.8 413.4 413.2 412.6 412.4 410.6
+410.8 410.8 411.4 412.4 410 410.8 409.8 410.4 410.4 409.6 410.6 411.2
+411.4 411.8 409 409.8 409.2 411.2 411.4 410.4 410.8 409.6 410.6 411.2
+410.8 412.2;
+#X coords 0 500 100 130 220 110 1;
+#X restore 16 14 graph;
+#X obj 960 425 s \$0-timeroll;
+#X msg 1121 371 bounds 0 \$1 100 \$2;
+#X msg 722 200 resize \$1;
+#X obj 461 87 moses 5, f 8;
+#X msg 958 399 ylabel -2.5 \$1 \$2;
+#X connect 0 0 4 0;
+#X connect 0 0 5 0;
+#X connect 1 0 32 0;
+#X connect 2 0 12 0;
+#X connect 4 0 1 0;
+#X connect 5 0 0 1;
+#X connect 5 2 0 1;
+#X connect 6 0 0 0;
+#X connect 7 0 28 0;
+#X connect 8 0 37 0;
+#X connect 9 0 10 0;
+#X connect 10 1 11 0;
+#X connect 11 0 31 0;
+#X connect 11 1 36 0;
+#X connect 12 0 7 0;
+#X connect 12 1 8 0;
+#X connect 12 2 9 0;
+#X connect 12 3 21 0;
+#X connect 12 4 22 0;
+#X connect 12 5 27 0;
+#X connect 14 0 38 0;
+#X connect 14 0 35 0;
+#X connect 15 0 14 1;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 17 1 15 0;
+#X connect 18 0 14 0;
+#X connect 19 0 29 0;
+#X connect 20 0 30 0;
+#X connect 21 0 23 0;
+#X connect 21 1 19 1;
+#X connect 22 0 23 0;
+#X connect 22 1 20 1;
+#X connect 23 0 19 0;
+#X connect 23 1 20 0;
+#X connect 25 0 26 0;
+#X connect 26 0 36 0;
+#X connect 28 0 6 0;
+#X connect 29 0 14 0;
+#X connect 29 1 28 2;
+#X connect 30 0 14 1;
+#X connect 30 1 28 1;
+#X connect 31 0 5 1;
+#X connect 35 0 34 0;
+#X connect 36 0 34 0;
+#X connect 37 1 6 1;
+#X connect 38 0 34 0;
+#X coords 0 -1 1 1 232 119 2 10 10;

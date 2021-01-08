@@ -1,0 +1,21 @@
+#N canvas -8 -8 1904 986 10;
+#X obj 391 288 metro \$1;
+#X obj 391 190 loadbang;
+#X obj 424 75 inlet;
+#X obj 391 345 outlet;
+#X obj 818 271 inlet;
+#X obj 391 237 != 0;
+#X obj 391 260 sel 1;
+#X obj 391 215 \$1;
+#X obj 391 317 list 0;
+#X text 712 294 ceation argument = inlet 2: miliseconds bewtween output
+samples;
+#X text 467 72 inlet 1: value to be resampled;
+#X connect 0 0 8 0;
+#X connect 1 0 7 0;
+#X connect 2 0 8 1;
+#X connect 4 0 0 1;
+#X connect 5 0 6 0;
+#X connect 6 0 0 0;
+#X connect 7 0 5 0;
+#X connect 8 0 3 0;

@@ -7,12 +7,13 @@ __________________________________________allgemein_____________________________
 - [] add light sensor
 - [] add humidity sensor
 - [] checken ob sich am signal etwas ändert beim laptop wenn man in an die stromversorgung hängt!
+- [] standalone verion mit raspberry testen
 
 _____________________________________________Pd______________________________________________
 
 - [] save last calibration (and set bounds for sliders/oszi)
-
-
+- [X] vanilla compatibility
+- [] comport objekt empfängt erst daten wenn in der arduino IDE der monitor einmal aufgemacht wurde?!?! --> ändern (ritsch)
 
 
 ___________________________________________arduino__________________________________________
@@ -20,5 +21,6 @@ ___________________________________________arduino______________________________
 
 - [X] use capacitance measurements instead (needs output AC voltage source from arduino)
 - []  dont use sin() as argument for creating square wve (you only need to update squarewave when it changes, not every sample)
+- [] glieichspannung am ausgang(?) problem? feuchtigkeit dadurch messbar? DC mit kondensator entfernen?
 
 ___________________________________________Bonus____________________________________________
