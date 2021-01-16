@@ -32,3 +32,13 @@ die schaltung sieht folgendermaßen aus:
 
 
 (es gibt auch die möglichkeit in Pd um über einen output pin LEDs anzusteuern wenn die pflanze "spricht").
+
+********************************************* Raspberry Pi***********************************************
+
+Pd kann auf dem arduino keinen serial input einlesen (comport objekt funktioniert nicht/existiert nicht):
+
+--- einlesen der serial inputs über ein python skript ("readSerialAndSendToOSC.py") und anschließedes senden über OSC
+--- um das Skript zu bearbeiten/zu benutzen: herunterladen der "mu" python IDE auf dem RasPi + installieren der library 
+python-osc (über pip3 installieren)
+--- die IP adresse für die OSC messages ändert sich wenn man den RasPi mit dem Wlan verbindet (ohne wlan sollte es 127.0.0.1 bleiben)
+--- die aktuelle IP adress kann man im terminal mit dem Befehl "ifconfig" abfragen

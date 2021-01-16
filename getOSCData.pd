@@ -1,0 +1,8 @@
+#N canvas -8 -8 1920 997 12;
+#X obj 902 356 netreceive -u -b 8000;
+#X obj 902 380 oscparse;
+#X obj 902 404 list trim;
+#X obj 902 428 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
