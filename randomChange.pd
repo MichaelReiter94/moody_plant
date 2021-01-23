@@ -1,0 +1,38 @@
+#N canvas 0 0 1888 970 10;
+#X obj 851 448 change;
+#X obj 851 352 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 851 473 5 0 0 0 - - -, f 5;
+#X obj 851 373 until;
+#X obj 851 665 outlet;
+#X obj 851 497 t f b;
+#X obj 1082 314 f \$1;
+#X obj 851 405 random 100;
+#X obj 1082 278 loadbang;
+#X floatatom 1121 389 5 0 0 0 - - -, f 5;
+#X floatatom 1030 298 5 0 0 0 - - -, f 5;
+#X text 670 699 outputs random number that is different from the last
+number;
+#X obj 1121 366 int;
+#X obj 1030 112 inlet;
+#X obj 851 112 inlet;
+#X text 1081 112 creation argument = inlet 2 = upper limit (exclusive)
+for random numbers (lower limit = 0);
+#X text 590 112 inlet 1: output random next number;
+#X obj 1082 339 moses 2;
+#X text 1082 146 must be > 1;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 5 0;
+#X connect 3 0 7 0;
+#X connect 5 0 4 0;
+#X connect 5 1 3 1;
+#X connect 6 0 17 0;
+#X connect 7 0 0 0;
+#X connect 8 0 6 0;
+#X connect 9 0 7 1;
+#X connect 10 0 6 0;
+#X connect 12 0 9 0;
+#X connect 13 0 10 0;
+#X connect 14 0 1 0;
+#X connect 17 1 12 0;
