@@ -25,13 +25,13 @@ Once the data is received in Pd, it first needs to be converted from ASCII to nu
 %\caption{Converting ASCII data received from the Arduino to integers}
 %\end{center}
 %\end{figure}
-Afterwards, the kind of reaction (happy, need or angry) needs to be determined. For this, the program needs to know when a touch occurs. This is achieved by the calibration process. By touching the plant, standing close to it and going away from it during calibration, it sets the thresholds for when it is supposed to detect a touch or proximity.
+Afterwards, the kind of reaction (happy, needy or angry) needs to be determined. For this, the program needs to know when a touch occurs. This is achieved by the calibration process. By touching the plant, standing close to it and going away from it during calibration, it sets the thresholds for when it is supposed to detect a touch or proximity.
 \begin{itemize}
 \item Happy:\\
 If the input goes beneath the set threshold, it plays a happy sound (randomly chosen but non repeating). Afterwards the Pd patch ignores all touches for a certain amount of time (as of now 700 miliseconds) before being able to play any sound again. This is necessary because we get about 30 values per second that would trigger 30 sounds within this second if the plant was touched for this entire second.
 \item Angry\\
-If, within a set amount of time the plant was touched too much, it expresses anger. The amount of time until it becomes annoyed can be set in the GUI. So if, for example, you have been touching it for 4 seconds within the last 10 seconds everything is fine. If you have been holding its leaves for 5 or more seconds in that time it gets angry.
-\item Needy
+If, within a set amount of time the plant was touched too much, it expresses anger. The amount of time until it becomes annoyed can be set in the GUI. So if, for example, you have been touching it for four seconds within the last ten seconds everything is fine. If you have been holding its leaves for five or more seconds in that time it gets angry.
+\item Needy\\
 As soon as you let go of the plant, a timer starts counting. If the timer reaches a threshold set in the GUI, the plant becomes needy. This does not mean it constantly makes noises for attention but every second there is a small probability for it to make a noise. If in this state you get in close proximity to the plant (not touching it, just passing by next to it), it will very likely call you out and demand some love.
 \end{itemize}
 
@@ -61,7 +61,7 @@ The GUI in Pd has consists of three parts: Calibration, monitoring and settings.
 
 
 The calibration in the top part has already been described. It sets the correct threshold. Just push the 'start calibration button' and the text field tells you what to do when.
-The middle part is mostly for settings like which USD port to read from, opening and closing the port and setting the time for when mood changes occur and what sound character to use (so far we have recorded to different kinds of characters with happy, angry and needy sounds each). Lastly the incoming voltages can be monitored. On the very bottom, two graphical arrays are displayed. If a plant is connected, they show the history of the last 100 samples. The only difference between them is the y-scaling. One is zoomed further in for the proximity detection (visibly only as smaller changes) and one adjusted to the 'touch-threshold'. The buttons on the right display if the algorithm detects a touch, proximity or nothing at all at this very moment. 
+The middle part is mostly for settings like which USB port to read from, opening and closing the port and setting the time for when mood changes occur and what sound character to use (so far we have recorded two different kinds of characters with happy, angry and needy sounds each). Lastly the incoming voltages can be monitored. On the very bottom, two graphical arrays are displayed. If a plant is connected, they show the history of the last 100 samples. The only difference between them is the y-scaling. One is zoomed further in for the proximity detection (visibly only as smaller changes) and one adjusted to the 'touch-threshold'. The buttons on the right display if the algorithm detects a touch, proximity or nothing at all at this very moment. 
 
 
 

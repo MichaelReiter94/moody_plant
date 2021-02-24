@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.7.2)  23 FEB 2021 01:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.7.2)  24 FEB 2021 23:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -839,9 +839,9 @@ File: Figures/thumbnail.png Graphic file (type png)
 Package pdftex.def Info: Figures/thumbnail.png  used on input line 18.
 (pdftex.def)             Requested size: 351.66908pt x 234.68027pt.
 
-Overfull \hbox (4.83444pt too wide) in paragraph at lines 30--31
+Overfull \hbox (7.70334pt too wide) in paragraph at lines 30--31
 \T1/ptm/m/n/10.95 Patch. In diesem wird je nach-dem wie die 'Moody Plant' be-ha
-n-delt wurde entschieden
+n-delt wurde, entschieden
  []
 
 ) [2 <./Figures/thumbnail.png (PNG copy)>]
@@ -939,11 +939,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 120.
 Here is how much of TeX's memory you used:
  20046 strings out of 492609
  361194 string characters out of 6132819
- 651020 words of memory out of 5000000
+ 651022 words of memory out of 5000000
  23424 multiletter control sequences out of 15000+600000
  45288 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,10n,122p,899b,1370s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,10n,122p,902b,1370s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2019/texm
 f-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<c:/texlive/2019/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/
@@ -956,7 +956,7 @@ mf-dist/fonts/type1/public/cm-super/sftt1200.pfb><c:/texlive/2019/texmf-dist/fo
 nts/type1/urw/times/utmb8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/time
 s/utmr8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/t
 exlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on MoodyPlantDocumentation.pdf (12 pages, 6488912 bytes).
+Output written on MoodyPlantDocumentation.pdf (12 pages, 6488997 bytes).
 PDF statistics:
  277 PDF objects out of 1000 (max. 8388607)
  218 compressed objects within 3 object streams
