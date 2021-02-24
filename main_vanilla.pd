@@ -1,9 +1,9 @@
-#N canvas 0 0 1888 970 10;
+#N canvas 0 0 1888 993 10;
 #X declare -lib zexy;
 #X declare -lib cyclone;
-#N canvas 0 0 1888 970 GUI 1;
+#N canvas -1928 4 1904 1009 GUI 0;
 #X obj 837 54 hsl 284 28 0 600 0 0 empty visualizeVoltage voltage 3
--12 0 10 -4096 -1 -1 22819 1;
+-12 0 10 -4096 -1 -1 0 1;
 #X obj 625 41 bng 25 250 50 0 openPort empty open\ port 32 9 0 10 -4033
 -1 -1;
 #X obj 625 81 bng 25 250 50 0 closePort empty close\ port 32 8 0 10
@@ -19,7 +19,7 @@
 #X obj 895 145 hsl 250 22 0 0.5 0 0 empty \$0-timeTouched empty -2
 -8 0 10 -258049 -1 -1 0 1;
 #X obj 897 205 hsl 250 22 0 1 0 0 empty \$0-notTouchedFor empty -2
--8 0 10 -4033 -1 -1 10613 1;
+-8 0 10 -4033 -1 -1 24900 1;
 #N canvas 0 0 1888 970 getInput 0;
 #X obj 756 228 loadbang;
 #X msg 701 272 open \$1;
@@ -102,14 +102,14 @@
 -1 -1 4;
 #X obj 543 88 loadbang;
 #X msg 543 154 4;
-#N canvas 0 0 1888 970 calculateTouches 1;
+#N canvas 0 0 1888 970 calculateTouches 0;
 #X floatatom 533 266 8 0 0 0 - - -, f 8;
 #X floatatom 615 358 5 0 0 0 - - -, f 5;
-#X msg 1186 391 1;
-#X msg 1233 391 0;
-#X floatatom 1186 454 5 0 0 0 - - -, f 5;
-#X obj 1186 425 mavg 100, f 18;
-#X obj 1186 503 moses 0.5;
+#X msg 876 391 1;
+#X msg 923 391 0;
+#X floatatom 876 454 5 0 0 0 - - -, f 5;
+#X obj 876 425 mavg 100, f 18;
+#X obj 876 503 moses 0.5;
 #N canvas 0 4 1904 1009 mavgArgument 0;
 #X text 1011 449 hopsize (of env~ object);
 #X obj 951 480 / 44100;
@@ -132,58 +132,58 @@
 #X connect 7 0 12 0;
 #X connect 10 0 6 0;
 #X connect 12 0 11 0;
-#X restore 1346 385 pd mavgArgument;
+#X restore 1784 335 pd mavgArgument;
 #X obj 615 403 s triggerThreshold;
 #X obj 654 319 loadbang;
-#X obj 1245 470 s \$0-timeTouched;
-#X obj 1549 475 counter;
-#X obj 1549 450 metro 1000;
-#X obj 1549 425 loadbang;
-#X floatatom 1549 500 5 0 0 0 - - -, f 5;
-#X obj 1639 435 r \$0-touched;
-#X obj 1639 460 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 935 470 s \$0-timeTouched;
+#X obj 1239 475 counter;
+#X obj 1239 450 metro 1000;
+#X obj 1239 425 loadbang;
+#X floatatom 1239 500 5 0 0 0 - - -, f 5;
+#X obj 1329 435 r \$0-touched;
+#X obj 1329 460 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 1549 574 moses 1;
-#X obj 1549 522 / 60;
-#X floatatom 1549 547 5 0 0 0 - - -, f 5;
-#X obj 1617 563 s \$0-notTouchedFor;
+#X obj 1239 574 moses 1;
+#X obj 1239 522 / 60;
+#X floatatom 1239 547 5 0 0 0 - - -, f 5;
+#X obj 1307 563 s \$0-notTouchedFor;
 #X obj 533 233 inlet;
 #X obj 533 752 outlet;
-#X obj 1185 760 outlet;
-#X obj 1549 760 outlet;
-#X obj 1185 726 tgl 25 0 empty empty empty 17 7 0 10 -262144 -1 -1
-0 1;
-#X obj 1549 726 tgl 25 0 empty empty empty 17 7 0 10 -262144 -1 -1
-0 1;
-#X msg 1237 533 1;
-#X msg 1185 533 0;
-#X msg 1588 601 1;
-#X msg 1549 601 0;
-#X obj 1570 361 f;
-#X obj 1291 315 f;
-#X obj 1291 127 inlet;
-#X obj 1570 127 inlet;
+#X obj 875 760 outlet;
+#X obj 1239 760 outlet;
+#X obj 875 726 tgl 25 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 1239 726 tgl 25 0 empty empty empty 17 7 0 10 -262144 -1 -1
+1 1;
+#X msg 927 533 1;
+#X msg 875 533 0;
+#X msg 1278 601 1;
+#X msg 1239 601 0;
+#X obj 1260 361 f;
+#X obj 981 315 f;
+#X obj 981 127 inlet;
+#X obj 1260 127 inlet;
 #X text 533 205 rms signal;
-#X text 1561 99 seconds (not touched) until needy;
-#X text 1257 99 seconds (of touching) until annoyed;
+#X text 1251 99 seconds (not touched) until needy;
+#X text 947 99 seconds (of touching) until annoyed;
 #X text 533 778 touched;
-#X text 1161 799 touched for too long;
-#X text 1515 799 not touched for too long;
+#X text 851 799 touched for too long;
+#X text 1205 799 not touched for too long;
 #X obj 737 299 s \$0-proximityThreshold;
-#X floatatom 78 391 5 0 0 0 - - -, f 5;
-#X obj 135 413 r \$0-proximityThreshold;
-#X floatatom 135 438 5 0 0 0 - - -, f 5;
-#X obj 78 461 moses 0.35;
-#X obj 78 536 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X text 104 538 determines if someone is in close proximity;
-#X obj 78 559 s \$0-proximityAlert;
-#X obj 135 485 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X floatatom 218 391 5 0 0 0 - - -, f 5;
+#X obj 275 413 r \$0-proximityThreshold;
+#X floatatom 275 438 5 0 0 0 - - -, f 5;
+#X obj 218 461 moses 0.35;
+#X obj 218 536 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 135 508 s \$0-nobodyIsNear;
+#X text 244 538 determines if someone is in close proximity;
+#X obj 218 559 s \$0-proximityAlert;
+#X obj 275 485 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 275 508 s \$0-nobodyIsNear;
 #X obj 533 671 bng 38 250 50 0 \$0-touched empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 78 415 gate 20;
+#X obj 218 415 gate 20;
 #X obj 533 374 moses 400;
 #X msg 654 341 330;
 #N canvas 0 4 1904 1009 calibrate 0;
@@ -1188,7 +1188,7 @@
 #X connect 65 0 50 1;
 #X connect 66 0 60 1;
 #X restore 615 282 pd calibrate;
-#X obj 1291 340 * 30;
+#X obj 981 340 * 30;
 #X connect 0 0 53 0;
 #X connect 0 0 55 0;
 #X connect 1 0 8 0;
@@ -1261,14 +1261,14 @@
 #X obj 767 279 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 722 349 spigot 0;
-#X obj 982 279 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 982 279 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 982 390 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 982 299 route 1;
 #X obj 491 294 - 1;
 #X obj 491 315 * -1;
-#X obj 491 335 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 491 335 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X floatatom 722 645 5 0 0 0 - - -, f 5;
 #X obj 722 669 outlet;
@@ -1281,7 +1281,7 @@
 #X msg 1173 380 1;
 #X msg 1308 386 0;
 #X obj 1173 403 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-1 1;
+0 1;
 #X obj 1173 362 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 1308 362 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -1307,7 +1307,7 @@ always makes a sound. if noone is there it makes sounds way less frequently
 #X obj 250 216 spigot 1;
 #X msg 232 178 1;
 #X msg 295 170 0;
-#X obj 295 195 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 295 195 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 250 253 outlet;
 #X connect 0 0 3 0;
@@ -1328,7 +1328,7 @@ always makes a sound. if noone is there it makes sounds way less frequently
 #X obj 250 216 spigot 1;
 #X msg 232 178 1;
 #X msg 295 170 0;
-#X obj 295 195 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 295 195 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 250 253 outlet;
 #X connect 0 0 3 0;
@@ -1416,7 +1416,7 @@ always makes a sound. if noone is there it makes sounds way less frequently
 #X obj 798 145 nbx 3 23 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
 18 -258049 -1 -1 10 256 0;
 #X obj 798 205 nbx 3 23 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
-18 -4033 -1 -1 61 256 0;
+18 -4033 -1 -1 60 256 0;
 #X text 798 171 seconds the plant needs to be touched to get angry
 ;
 #X text 798 230 seconds without touching the plant until it gets needy
@@ -1425,80 +1425,80 @@ always makes a sound. if noone is there it makes sounds way less frequently
 #X obj 448 91 inlet;
 #N canvas 0 0 1904 1009 tables 0;
 #N canvas 0 0 450 300 (subpatch) 0;
-#X array happy1 161159 float 0 black black;
-#X coords 0 1 161158 -1 200 140 1;
+#X array happy1 70495 float 0 black black;
+#X coords 0 1 70494 -1 200 140 1;
 #X restore 530 92 graph;
 #N canvas 0 0 450 300 (subpatch) 0;
-#X array angry1 49635 float 0 black black;
-#X coords 0 1 49634 -1 200 140 1;
+#X array angry1 102766 float 0 black black;
+#X coords 0 1 102765 -1 200 140 1;
 #X restore 530 327 graph;
 #N canvas 0 0 450 300 (subpatch) 0;
-#X array needy1 65705 float 0 black black;
-#X coords 0 1 65704 -1 200 140 1;
+#X array needy1 102139 float 0 black black;
+#X coords 0 1 102138 -1 200 140 1;
 #X restore 530 562 graph;
 #N canvas 0 0 450 300 (subpatch) 0;
-#X array happy2 117839 float 0 black black;
-#X coords 0 1 117838 -1 200 140 1;
+#X array happy2 51383 float 0 black black;
+#X coords 0 1 51382 -1 200 140 1;
 #X restore 745 92 graph;
 #N canvas 0 0 450 300 (subpatch) 0;
-#X array happy3 163628 float 0 black black;
-#X coords 0 1 163627 -1 200 140 1;
+#X array happy3 109658 float 0 black black;
+#X coords 0 1 109657 -1 200 140 1;
 #X restore 960 92 graph;
 #N canvas 0 0 450 300 (subpatch) 0;
-#X array angry2 57856 float 0 black black;
-#X coords 0 1 57855 -1 200 140 1;
+#X array angry2 65168 float 0 black black;
+#X coords 0 1 65167 -1 200 140 1;
 #X restore 745 327 graph;
 #N canvas 0 0 450 300 (subpatch) 0;
-#X array angry3 56984 float 0 black black;
-#X coords 0 1 56983 -1 200 140 1;
+#X array angry3 124071 float 0 black black;
+#X coords 0 1 124070 -1 200 140 1;
 #X restore 960 327 graph;
 #N canvas 0 0 450 300 (subpatch) 0;
-#X array needy2 36808 float 0 black black;
-#X coords 0 1 36807 -1 200 140 1;
+#X array needy2 64855 float 0 black black;
+#X coords 0 1 64854 -1 200 140 1;
 #X restore 745 562 graph;
 #N canvas 0 0 450 300 (subpatch) 0;
-#X array needy3 88641 float 0 black black;
-#X coords 0 1 88640 -1 200 140 1;
+#X array needy3 81461 float 0 black black;
+#X coords 0 1 81460 -1 200 140 1;
 #X restore 960 562 graph;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array purring 730624 float 0 black black;
 #X coords 0 1 730623 -1 200 140 1;
 #X restore 528 769 graph;
 #N canvas 0 0 450 300 (subpatch) 0;
-#X array happy4 93201 float 0 black black;
-#X coords 0 1 93200 -1 200 140 1;
+#X array happy4 68769 float 0 black black;
+#X coords 0 1 68768 -1 200 140 1;
 #X restore 1182 90 graph;
 #N canvas 0 0 450 300 (subpatch) 0;
-#X array happy5 144895 float 0 black black;
-#X coords 0 1 144894 -1 200 140 1;
+#X array happy5 68769 float 0 black black;
+#X coords 0 1 68768 -1 200 140 1;
 #X restore 1397 90 graph;
 #N canvas 0 0 450 300 (subpatch) 0;
-#X array happy6 200540 float 0 black black;
-#X coords 0 1 200539 -1 200 140 1;
+#X array happy6 89257 float 0 black black;
+#X coords 0 1 89256 -1 200 140 1;
 #X restore 1612 90 graph;
 #N canvas 0 0 450 300 (subpatch) 0;
-#X array angry4 38570 float 0 black black;
-#X coords 0 1 38569 -1 200 140 1;
+#X array angry4 67276 float 0 black black;
+#X coords 0 1 67275 -1 200 140 1;
 #X restore 1190 327 graph;
 #N canvas 0 0 450 300 (subpatch) 0;
-#X array angry5 74044 float 0 black black;
-#X coords 0 1 74043 -1 200 140 1;
+#X array angry5 80207 float 0 black black;
+#X coords 0 1 80206 -1 200 140 1;
 #X restore 1405 327 graph;
 #N canvas 0 0 450 300 (subpatch) 0;
-#X array angry6 86251 float 0 black black;
-#X coords 0 1 86250 -1 200 140 1;
+#X array angry6 59719 float 0 black black;
+#X coords 0 1 59718 -1 200 140 1;
 #X restore 1620 327 graph;
 #N canvas 0 0 450 300 (subpatch) 0;
-#X array needy4 135425 float 0 black black;
-#X coords 0 1 135424 -1 200 140 1;
+#X array needy4 57904 float 0 black black;
+#X coords 0 1 57903 -1 200 140 1;
 #X restore 1216 558 graph;
 #N canvas 0 0 450 300 (subpatch) 0;
-#X array needy5 69023 float 0 black black;
-#X coords 0 1 69022 -1 200 140 1;
+#X array needy5 116405 float 0 black black;
+#X coords 0 1 116404 -1 200 140 1;
 #X restore 1431 558 graph;
 #N canvas 0 0 450 300 (subpatch) 0;
-#X array needy6 146784 float 0 black black;
-#X coords 0 1 146783 -1 200 140 1;
+#X array needy6 116405 float 0 black black;
+#X coords 0 1 116404 -1 200 140 1;
 #X restore 1646 558 graph;
 #X restore 27 25 pd tables;
 #N canvas 0 0 1888 970 playHappy 0;
@@ -1996,7 +1996,7 @@ always makes a sound. if noone is there it makes sounds way less frequently
 #X obj 250 216 spigot 1;
 #X msg 232 178 1;
 #X msg 295 170 0;
-#X obj 295 195 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 295 195 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 250 253 outlet;
 #X connect 0 0 3 0;
@@ -2010,7 +2010,7 @@ always makes a sound. if noone is there it makes sounds way less frequently
 #X restore 697 514 pd blockIfPlantIsSpeaking;
 #X msg 543 188 60;
 #X obj 1232 205 hradio 25 0 0 2 \$0-character empty choose\ character
--38 31 0 12 -262144 -1 -1 1;
+-38 31 0 12 -262144 -1 -1 0;
 #X obj 1363 138 key;
 #X obj 1363 163 route 49 50;
 #X msg 1363 188 0;
@@ -2066,7 +2066,7 @@ always makes a sound. if noone is there it makes sounds way less frequently
 #N canvas 0 0 1904 1009 init 0;
 #X obj 104 93 declare -lib zexy;
 #X obj 104 118 declare -lib cyclone;
-#X obj 275 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 275 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 275 191 s pd;
 #X msg 275 172 dsp \$1;

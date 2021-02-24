@@ -1,0 +1,143 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% IEM Latex Style for articles
+%
+% Christopher Frauenberger, 28.6.2003
+%
+% provides:
+% \maketitle - renewed to IEM layout
+%
+% NEW:
+%       \author
+%       \authorcontact
+%       \title
+%       \doctype                
+%       \classification         according to ACM Computing Reviews
+%                               1998
+%       \keywords
+%       \pages                  to use with an endlabel. ammount of
+%                               pages 
+%       
+%       Modified 2008, Franz Zotter
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Use the following packages
+
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+%\usepackage{t1enc}
+\usepackage{latexsym}
+\usepackage{color}
+\usepackage{sectsty}
+\definecolor{iemcolor}{rgb}{0.16, 0.26, 0.58}
+% Font selection
+%\renewcommand{\familydefault}{cmss}
+\renewcommand{\familydefault}{ptm}
+\allsectionsfont{\normalfont\sffamily\bfseries} 
+
+% Graphics package graphics
+% usage : \includegraphics{figure.ps} within figure environment
+\usepackage{epsfig,graphics}  
+
+% Graphics package subfigure 
+% using multiple graphics in one figure environment 
+% usage : \subfigure[..]{\includegraphics{filename}} 
+%\usepackage{subfigure}  
+
+% Mathematics
+\usepackage{amsmath, amssymb}
+
+% URL formatting package url
+% typesets Url in teletype and manages splitting over lines
+% usage : \url{http://www.example.com}
+\usepackage{url}
+
+% Page dimensions 
+% either in inches or in cm
+\setlength{\textwidth}{15cm}
+\setlength{\textheight}{23cm}
+\setlength{\topmargin}{0cm}
+\setlength{\headheight}{0.5cm}
+\setlength{\headsep}{0.5cm}
+\setlength{\oddsidemargin}{1cm}
+\setlength{\evensidemargin}{1cm}
+
+% Paragraph style 
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex}
+
+% Specifying the page-style by 
+% \markright{} : set the right-heading
+% \pagenumbering{roman} : i,ii,iii,iv ... numbering 
+\pagestyle{myheadings}
+\markright{}
+\pagenumbering{roman}
+
+% use wide spacing (1.5-2)
+% larger typeset
+% 12pt typeset is normal-size as specified in \documentclass 
+%\renewcommand{\baselinestretch}{1.66}
+%\normalsize
+
+% Doctype could be ``Thesis'', ``Essay'' etc.
+\newcommand{\doctype}[1]{\gdef\@doctype{#1}}
+\doctype{}
+
+\newcommand{\supervisor}[1]{\gdef\@supervisor{#1}}
+\supervisor{}
+\newcommand{\institute}[1]{\gdef\@institute{#1}}
+\institute{}
+
+
+\renewcommand{\maketitle}{\begin{titlepage}
+  \vspace*{65mm}
+ 	{\Large\bf \@title}
+
+	\vspace{65mm}
+
+  {\large \@doctype}
+
+  \vspace{7mm}
+ 
+
+  
+
+
+  {\@author
+  
+  Graz, \@date}
+
+  \vspace{5mm}
+
+  \begin{minipage}{0.95\textwidth}
+     \begin{minipage}{0.4\textwidth}
+  	\flushleft\includegraphics[height=1.8cm]{Figures/kug_logo_2020.png}
+          %\flushleft\includegraphics[height=0.9cm, bb=0 0 0 294]{kuglogo}
+     \end{minipage}
+     \begin{minipage}{0.6\textwidth}
+	\begin{minipage}{0.75\textwidth}
+	   \vspace{1.4cm}
+	   \textcolor{iemcolor}{\footnotesize Institute of Electronic Music and Acoustics}
+	\end{minipage}
+	\begin{minipage}{.2\textwidth}
+           \vspace{0.2cm}
+            \flushright\includegraphics[height=1.5cm,bb=0 0 284 280]{Figures/iemlogo}
+	 \end{minipage}
+     \end{minipage}
+  \end{minipage}
+  
+  \end{titlepage}%
+  \setcounter{page}{2}}
+
+
+\newcommand{\pages}[1]{\gdef\@pages{#1}}
+\newcommand{\classification}[1]{\gdef\@classification{#1}}
+\newcommand{\keywords}[1]{\gdef\@keywords{#1}}
+\pages{}
+%\classification{}
+\keywords{}
+\newcommand{\authorcontact}[1]{\gdef\@authorcontact{#1}}
+%\authorcontact{}
+
+\pagenumbering{arabic}
+

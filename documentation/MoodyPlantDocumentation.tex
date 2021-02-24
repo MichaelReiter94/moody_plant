@@ -1,0 +1,120 @@
+%% Based on <bare_jrnl.tex> in the ieee package available from CTAN,
+%% I have changed the options so that most useful ones are clubbed together,
+%% Have a look at <bare_jrnl.tex> to understand the function of each package. 
+
+%% This code is offered as-is - no warranty - user assumes all risk.
+%% Free to use, distribute and modify.
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% Testflow can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/testflow
+
+%        File: icosaeder_description.tex
+%     Created: Mon Jul 10 10:00 AM 2006 C
+% Last Change: Mon Jul 10 10:00 AM 2006 C
+%
+\documentclass[12pt, a4paper]{article}
+\usepackage{Iem, CustomListings}
+\usepackage[english]{babel}
+%\usepackage[ansinew]{inputenc}
+\usepackage[latin1]{inputenc}
+%\usepackage{microtype}
+\usepackage{epstopdf}
+\usepackage{amsmath, amssymb}
+\hyphenation{}
+\usepackage{listings}
+\usepackage{float}
+\usepackage[colorlinks = true,
+            linkcolor = black,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+            
+\usepackage{url}
+%\usepackage{fancyhdr}
+%%
+%\pagestyle{fancy}
+%\renewcommand{\headrulewidth}{0.5pt}
+
+%\fancyhf{}
+
+
+\usepackage{cite, graphicx, subfigure, amsmath,amssymb} 
+
+% set the graphicspath
+\graphicspath{{figures/}} 
+\usepackage{placeins, todonotes}
+
+\begin{document}
+\selectlanguage{english}
+\title{Moody Plant}
+\author{Br\"uhwiler Hanna, Elisabeth Hacker, Reiter Michael \\\small{Supervisor: Gro\ss-Vogt, Katharina, Mag.rer.nat. Dr.rer.nat.}}
+
+%\markboth{}{N. Erster, N. Zweiter: Kurztitel}
+\markboth{}{Moody Plant}
+
+\doctype{Sonic Interaction Design}
+
+%\date{Juni 2008}
+
+\maketitle
+\newpage
+\pagestyle{empty}
+%\hspace{1cm}\vspace{3cm}
+
+\hspace{1cm}\vspace{1cm}
+
+%\begin{abstract}
+\input{Chapters/abstract}
+%\end{abstract}
+\newpage
+\pagestyle{myheadings}
+\hspace{1cm}\vspace{2cm}
+
+
+\tableofcontents
+\newpage
+
+% ------------------ MAIN DOC START -----------------------------
+\nocite{prosody}
+\nocite{couch}
+\nocite{plantGrowing}
+\nocite{positiveInteraction}
+\nocite{github}
+
+
+\section{Introduction}
+A plant has feelings. It lives like every other creature day by day. And like everybody else, it also has some needs. Not only water and sun, but also some affection and physical contact - but careful, not too much! 
+This project is a playful attempt to create a more lively communication between humans and plants. The plant is personified, we gave it a voice to be able to interact. It can more be seen as an artistic installation than as a consumer product that serves people to take care of their plants.
+
+
+\input{Chapters/SoundDesign}
+\input{Chapters/TechnicalImplementation}
+
+
+
+
+\input{Chapters/Presentation}
+
+\input{Chapters/Conclusion}
+
+
+
+
+
+
+
+
+
+
+
+% ------------------
+% ------------------ MAIN DOC END -----------------------------
+\newpage
+\bibliography{BibDatabase}
+\bibliographystyle{ieeetr}
+
+\end{document}

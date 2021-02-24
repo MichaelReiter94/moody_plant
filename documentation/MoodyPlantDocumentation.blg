@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/W32TeX)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: MoodyPlantDocumentation.aux
+The style file: ieeetr.bst
+Database file #1: BibDatabase.bib
+Warning--entry type for "plantGrowing" isn't style-file defined
+--line 21 of file BibDatabase.bib
+Warning--empty publisher in couch
+Warning--empty booktitle in positiveInteraction
+You've used 7 entries,
+            1876 wiz_defined-function locations,
+            515 strings with 4505 characters,
+and the built_in function-call counts, 1301 in all, are:
+= -- 110
+> -- 55
+< -- 0
++ -- 22
+- -- 15
+* -- 76
+:= -- 190
+add.period$ -- 7
+call.type$ -- 7
+change.case$ -- 6
+chr.to.int$ -- 0
+cite$ -- 9
+duplicate$ -- 60
+empty$ -- 149
+format.name$ -- 15
+if$ -- 321
+int.to.chr$ -- 0
+int.to.str$ -- 7
+missing$ -- 4
+newline$ -- 25
+num.names$ -- 7
+pop$ -- 41
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 46
+stack$ -- 0
+substring$ -- 34
+swap$ -- 16
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 10
+width$ -- 8
+write$ -- 58
+(There were 3 warnings)
