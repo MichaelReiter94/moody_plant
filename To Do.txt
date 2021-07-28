@@ -24,3 +24,17 @@ ___________________________________________arduino______________________________
 - [] glieichspannung am ausgang(?) problem? feuchtigkeit dadurch messbar? DC mit kondensator entfernen?
 
 ___________________________________________Bonus____________________________________________
+
+
+Änderungen bei verenas version:
+
+- variable/dynamilsche anzahl an sounds
+- problem: gleichzeitiges abspielen geht nicht mehr (nurmehr ein tabplay~)
+
+- manuell verstellbare thresholds + visualisierungen
+- schnellere udpdates bei proximity (von 1x pro sekunde auf 10x -> schnellere reaktion) 
+
+
+
+
+
